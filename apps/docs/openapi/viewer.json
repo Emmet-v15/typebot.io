@@ -18,9 +18,7 @@
         "operationId": "sendMessageV1",
         "summary": "Send a message",
         "description": "To initiate a chat, do not provide a `sessionId` nor a `message`.\n\nContinue the conversation by providing the `sessionId` and the `message` that should answer the previous question.\n\nSet the `isPreview` option to `true` to chat with the non-published version of the typebot.",
-        "tags": [
-          "Deprecated"
-        ],
+        "tags": ["Deprecated"],
         "deprecated": true,
         "requestBody": {
           "required": true,
@@ -91,9 +89,7 @@
                             "description": "If set to `true`, it will only register the session and not start the chat. This is used for other chat platform integration as it can require a session to be registered before sending the first message."
                           }
                         },
-                        "required": [
-                          "typebot"
-                        ]
+                        "required": ["typebot"]
                       },
                       {
                         "anyOf": [
@@ -108,9 +104,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "startGroupId"
-                            ]
+                            "required": ["startGroupId"]
                           },
                           {
                             "type": "object",
@@ -123,9 +117,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "startEventId"
-                            ]
+                            "required": ["startEventId"]
                           },
                           {
                             "type": "object"
@@ -147,10 +139,7 @@
                         },
                         "details": {}
                       },
-                      "required": [
-                        "status",
-                        "description"
-                      ]
+                      "required": ["status", "description"]
                     },
                     "description": "Logs while executing client side actions"
                   }
@@ -178,9 +167,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "id"
-                            ]
+                            "required": ["id"]
                           },
                           {
                             "oneOf": [
@@ -449,11 +436,7 @@
                           ]
                         }
                       },
-                      "required": [
-                        "id",
-                        "theme",
-                        "settings"
-                      ]
+                      "required": ["id", "theme", "settings"]
                     },
                     "resultId": {
                       "type": "string"
@@ -482,10 +465,7 @@
                           },
                           "details": {}
                         },
-                        "required": [
-                          "status",
-                          "description"
-                        ]
+                        "required": ["status", "description"]
                       }
                     },
                     "lastMessageNewFormat": {
@@ -493,9 +473,7 @@
                       "description": "The sent message is validated and formatted on the backend. This is set only if the message differs from the formatted version."
                     }
                   },
-                  "required": [
-                    "messages"
-                  ]
+                  "required": ["messages"]
                 }
               }
             }
@@ -528,9 +506,7 @@
         "operationId": "sendMessageV2",
         "summary": "Send a message",
         "description": "To initiate a chat, do not provide a `sessionId` nor a `message`.\n\nContinue the conversation by providing the `sessionId` and the `message` that should answer the previous question.\n\nSet the `isPreview` option to `true` to chat with the non-published version of the typebot.",
-        "tags": [
-          "Deprecated"
-        ],
+        "tags": ["Deprecated"],
         "deprecated": true,
         "requestBody": {
           "required": true,
@@ -601,9 +577,7 @@
                             "description": "If set to `true`, it will only register the session and not start the chat. This is used for other chat platform integration as it can require a session to be registered before sending the first message."
                           }
                         },
-                        "required": [
-                          "typebot"
-                        ]
+                        "required": ["typebot"]
                       },
                       {
                         "anyOf": [
@@ -618,9 +592,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "startGroupId"
-                            ]
+                            "required": ["startGroupId"]
                           },
                           {
                             "type": "object",
@@ -633,9 +605,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "startEventId"
-                            ]
+                            "required": ["startEventId"]
                           },
                           {
                             "type": "object"
@@ -657,10 +627,7 @@
                         },
                         "details": {}
                       },
-                      "required": [
-                        "status",
-                        "description"
-                      ]
+                      "required": ["status", "description"]
                     },
                     "description": "Logs while executing client side actions"
                   }
@@ -688,9 +655,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "id"
-                            ]
+                            "required": ["id"]
                           },
                           {
                             "oneOf": [
@@ -959,11 +924,7 @@
                           ]
                         }
                       },
-                      "required": [
-                        "id",
-                        "theme",
-                        "settings"
-                      ]
+                      "required": ["id", "theme", "settings"]
                     },
                     "resultId": {
                       "type": "string"
@@ -992,10 +953,7 @@
                           },
                           "details": {}
                         },
-                        "required": [
-                          "status",
-                          "description"
-                        ]
+                        "required": ["status", "description"]
                       }
                     },
                     "lastMessageNewFormat": {
@@ -1003,9 +961,7 @@
                       "description": "The sent message is validated and formatted on the backend. This is set only if the message differs from the formatted version."
                     }
                   },
-                  "required": [
-                    "messages"
-                  ]
+                  "required": ["messages"]
                 }
               }
             }
@@ -1116,11 +1072,7 @@
                           "$ref": "#/components/schemas/settings"
                         }
                       },
-                      "required": [
-                        "id",
-                        "theme",
-                        "settings"
-                      ]
+                      "required": ["id", "theme", "settings"]
                     },
                     "lastMessageNewFormat": {
                       "type": "string",
@@ -1137,9 +1089,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "id"
-                            ]
+                            "required": ["id"]
                           },
                           {
                             "oneOf": [
@@ -1360,10 +1310,7 @@
                           },
                           "details": {}
                         },
-                        "required": [
-                          "status",
-                          "description"
-                        ]
+                        "required": ["status", "description"]
                       },
                       "description": "Logs that were saved during the last execution"
                     },
@@ -1384,11 +1331,7 @@
                       "description": "If progress bar is enabled, this field will return a number between 0 and 100 indicating the current progress based on the longest remaining path of the flow."
                     }
                   },
-                  "required": [
-                    "sessionId",
-                    "typebot",
-                    "messages"
-                  ]
+                  "required": ["sessionId", "typebot", "messages"]
                 }
               }
             }
@@ -1470,9 +1413,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "id"
-                            ]
+                            "required": ["id"]
                           },
                           {
                             "oneOf": [
@@ -1693,10 +1634,7 @@
                           },
                           "details": {}
                         },
-                        "required": [
-                          "status",
-                          "description"
-                        ]
+                        "required": ["status", "description"]
                       },
                       "description": "Logs that were saved during the last execution"
                     },
@@ -1717,9 +1655,7 @@
                       "description": "If progress bar is enabled, this field will return a number between 0 and 100 indicating the current progress based on the longest remaining path of the flow."
                     }
                   },
-                  "required": [
-                    "messages"
-                  ]
+                  "required": ["messages"]
                 }
               }
             }
@@ -1808,36 +1744,26 @@
                         "properties": {
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "group"
-                            ]
+                            "enum": ["group"]
                           },
                           "groupId": {
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "type",
-                          "groupId"
-                        ]
+                        "required": ["type", "groupId"]
                       },
                       {
                         "type": "object",
                         "properties": {
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "event"
-                            ]
+                            "enum": ["event"]
                           },
                           "eventId": {
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "type",
-                          "eventId"
-                        ]
+                        "required": ["type", "eventId"]
                       }
                     ]
                   },
@@ -1880,11 +1806,7 @@
                           "$ref": "#/components/schemas/settings"
                         }
                       },
-                      "required": [
-                        "id",
-                        "theme",
-                        "settings"
-                      ]
+                      "required": ["id", "theme", "settings"]
                     },
                     "lastMessageNewFormat": {
                       "type": "string",
@@ -1901,9 +1823,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "id"
-                            ]
+                            "required": ["id"]
                           },
                           {
                             "oneOf": [
@@ -2124,10 +2044,7 @@
                           },
                           "details": {}
                         },
-                        "required": [
-                          "status",
-                          "description"
-                        ]
+                        "required": ["status", "description"]
                       },
                       "description": "Logs that were saved during the last execution"
                     },
@@ -2148,11 +2065,7 @@
                       "description": "If progress bar is enabled, this field will return a number between 0 and 100 indicating the current progress based on the longest remaining path of the flow."
                     }
                   },
-                  "required": [
-                    "sessionId",
-                    "typebot",
-                    "messages"
-                  ]
+                  "required": ["sessionId", "typebot", "messages"]
                 }
               }
             }
@@ -2185,9 +2098,7 @@
         "operationId": "getUploadUrl",
         "summary": "Get upload URL for a file",
         "description": "Used for the web client to get the bucket upload file.",
-        "tags": [
-          "Deprecated"
-        ],
+        "tags": ["Deprecated"],
         "deprecated": true,
         "parameters": [
           {
@@ -2237,10 +2148,7 @@
                       "type": "boolean"
                     }
                   },
-                  "required": [
-                    "presignedUrl",
-                    "hasReachedStorageLimit"
-                  ]
+                  "required": ["presignedUrl", "hasReachedStorageLimit"]
                 }
               }
             }
@@ -2325,10 +2233,7 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "sessionId",
-                          "fileName"
-                        ]
+                        "required": ["sessionId", "fileName"]
                       }
                     ]
                   },
@@ -2336,9 +2241,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "filePathProps"
-                ]
+                "required": ["filePathProps"]
               }
             }
           }
@@ -2362,11 +2265,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "presignedUrl",
-                    "formData",
-                    "fileUrl"
-                  ]
+                  "required": ["presignedUrl", "formData", "fileUrl"]
                 }
               }
             }
@@ -2424,14 +2323,10 @@
                   "properties": {
                     "message": {
                       "type": "string",
-                      "enum": [
-                        "success"
-                      ]
+                      "enum": ["success"]
                     }
                   },
-                  "required": [
-                    "message"
-                  ]
+                  "required": ["message"]
                 }
               }
             }
@@ -2483,9 +2378,7 @@
       "get": {
         "operationId": "whatsAppRouter-subscribeWebhook",
         "summary": "Subscribe webhook",
-        "tags": [
-          "WhatsApp"
-        ],
+        "tags": ["WhatsApp"],
         "security": [
           {
             "Authorization": []
@@ -2591,9 +2484,7 @@
       "post": {
         "operationId": "whatsAppRouter-receiveMessage",
         "summary": "Message webhook",
-        "tags": [
-          "WhatsApp"
-        ],
+        "tags": ["WhatsApp"],
         "parameters": [
           {
             "in": "path",
@@ -2639,9 +2530,7 @@
                                         "type": "string"
                                       }
                                     },
-                                    "required": [
-                                      "phone_number_id"
-                                    ]
+                                    "required": ["phone_number_id"]
                                   },
                                   "contacts": {
                                     "type": "array",
@@ -2655,14 +2544,10 @@
                                               "type": "string"
                                             }
                                           },
-                                          "required": [
-                                            "name"
-                                          ]
+                                          "required": ["name"]
                                         }
                                       },
-                                      "required": [
-                                        "profile"
-                                      ]
+                                      "required": ["profile"]
                                     }
                                   },
                                   "messages": {
@@ -2677,9 +2562,7 @@
                                             },
                                             "type": {
                                               "type": "string",
-                                              "enum": [
-                                                "text"
-                                              ]
+                                              "enum": ["text"]
                                             },
                                             "text": {
                                               "type": "object",
@@ -2688,9 +2571,7 @@
                                                   "type": "string"
                                                 }
                                               },
-                                              "required": [
-                                                "body"
-                                              ]
+                                              "required": ["body"]
                                             },
                                             "timestamp": {
                                               "type": "string"
@@ -2711,9 +2592,7 @@
                                             },
                                             "type": {
                                               "type": "string",
-                                              "enum": [
-                                                "button"
-                                              ]
+                                              "enum": ["button"]
                                             },
                                             "button": {
                                               "type": "object",
@@ -2725,10 +2604,7 @@
                                                   "type": "string"
                                                 }
                                               },
-                                              "required": [
-                                                "text",
-                                                "payload"
-                                              ]
+                                              "required": ["text", "payload"]
                                             },
                                             "timestamp": {
                                               "type": "string"
@@ -2749,9 +2625,7 @@
                                             },
                                             "type": {
                                               "type": "string",
-                                              "enum": [
-                                                "interactive"
-                                              ]
+                                              "enum": ["interactive"]
                                             },
                                             "interactive": {
                                               "type": "object",
@@ -2766,15 +2640,10 @@
                                                       "type": "string"
                                                     }
                                                   },
-                                                  "required": [
-                                                    "id",
-                                                    "title"
-                                                  ]
+                                                  "required": ["id", "title"]
                                                 }
                                               },
-                                              "required": [
-                                                "button_reply"
-                                              ]
+                                              "required": ["button_reply"]
                                             },
                                             "timestamp": {
                                               "type": "string"
@@ -2795,9 +2664,7 @@
                                             },
                                             "type": {
                                               "type": "string",
-                                              "enum": [
-                                                "image"
-                                              ]
+                                              "enum": ["image"]
                                             },
                                             "image": {
                                               "type": "object",
@@ -2806,9 +2673,7 @@
                                                   "type": "string"
                                                 }
                                               },
-                                              "required": [
-                                                "id"
-                                              ]
+                                              "required": ["id"]
                                             },
                                             "timestamp": {
                                               "type": "string"
@@ -2829,9 +2694,7 @@
                                             },
                                             "type": {
                                               "type": "string",
-                                              "enum": [
-                                                "video"
-                                              ]
+                                              "enum": ["video"]
                                             },
                                             "video": {
                                               "type": "object",
@@ -2840,9 +2703,7 @@
                                                   "type": "string"
                                                 }
                                               },
-                                              "required": [
-                                                "id"
-                                              ]
+                                              "required": ["id"]
                                             },
                                             "timestamp": {
                                               "type": "string"
@@ -2863,9 +2724,7 @@
                                             },
                                             "type": {
                                               "type": "string",
-                                              "enum": [
-                                                "audio"
-                                              ]
+                                              "enum": ["audio"]
                                             },
                                             "audio": {
                                               "type": "object",
@@ -2874,9 +2733,7 @@
                                                   "type": "string"
                                                 }
                                               },
-                                              "required": [
-                                                "id"
-                                              ]
+                                              "required": ["id"]
                                             },
                                             "timestamp": {
                                               "type": "string"
@@ -2897,9 +2754,7 @@
                                             },
                                             "type": {
                                               "type": "string",
-                                              "enum": [
-                                                "document"
-                                              ]
+                                              "enum": ["document"]
                                             },
                                             "document": {
                                               "type": "object",
@@ -2908,9 +2763,7 @@
                                                   "type": "string"
                                                 }
                                               },
-                                              "required": [
-                                                "id"
-                                              ]
+                                              "required": ["id"]
                                             },
                                             "timestamp": {
                                               "type": "string"
@@ -2931,9 +2784,7 @@
                                             },
                                             "type": {
                                               "type": "string",
-                                              "enum": [
-                                                "location"
-                                              ]
+                                              "enum": ["location"]
                                             },
                                             "location": {
                                               "type": "object",
@@ -2965,26 +2816,18 @@
                                     }
                                   }
                                 },
-                                "required": [
-                                  "metadata"
-                                ]
+                                "required": ["metadata"]
                               }
                             },
-                            "required": [
-                              "value"
-                            ]
+                            "required": ["value"]
                           }
                         }
                       },
-                      "required": [
-                        "changes"
-                      ]
+                      "required": ["changes"]
                     }
                   }
                 },
-                "required": [
-                  "entry"
-                ]
+                "required": ["entry"]
               }
             }
           }
@@ -3001,9 +2844,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "message"
-                  ]
+                  "required": ["message"]
                 }
               }
             }
@@ -3065,16 +2906,11 @@
                         },
                         "details": {}
                       },
-                      "required": [
-                        "status",
-                        "description"
-                      ]
+                      "required": ["status", "description"]
                     }
                   }
                 },
-                "required": [
-                  "clientLogs"
-                ]
+                "required": ["clientLogs"]
               }
             }
           }
@@ -3091,9 +2927,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "message"
-                  ]
+                  "required": ["message"]
                 }
               }
             }
@@ -3135,11 +2969,7 @@
         "properties": {
           "version": {
             "type": "string",
-            "enum": [
-              "3",
-              "4",
-              "5"
-            ]
+            "enum": ["3", "4", "5"]
           },
           "id": {
             "type": "string"
@@ -3165,10 +2995,7 @@
                       "type": "number"
                     }
                   },
-                  "required": [
-                    "x",
-                    "y"
-                  ]
+                  "required": ["x", "y"]
                 },
                 "blocks": {
                   "type": "array",
@@ -3185,19 +3012,13 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "start"
-                            ]
+                            "enum": ["start"]
                           },
                           "label": {
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "id",
-                          "type",
-                          "label"
-                        ]
+                        "required": ["id", "type", "label"]
                       },
                       {
                         "type": "object",
@@ -3210,9 +3031,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "text"
-                            ]
+                            "enum": ["text"]
                           },
                           "content": {
                             "type": "object",
@@ -3230,10 +3049,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3246,9 +3062,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "image"
-                            ]
+                            "enum": ["image"]
                           },
                           "content": {
                             "type": "object",
@@ -3270,10 +3084,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3286,9 +3097,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "video"
-                            ]
+                            "enum": ["video"]
                           },
                           "content": {
                             "type": "object",
@@ -3326,10 +3135,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3342,9 +3148,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "embed"
-                            ]
+                            "enum": ["embed"]
                           },
                           "content": {
                             "type": "object",
@@ -3363,10 +3167,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3379,9 +3180,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "audio"
-                            ]
+                            "enum": ["audio"]
                           },
                           "content": {
                             "type": "object",
@@ -3395,10 +3194,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "$ref": "#/components/schemas/textInput"
@@ -3444,9 +3240,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Code"
-                            ]
+                            "enum": ["Code"]
                           },
                           "options": {
                             "type": "object",
@@ -3466,10 +3260,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3482,9 +3273,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Condition"
-                            ]
+                            "enum": ["Condition"]
                           },
                           "items": {
                             "type": "array",
@@ -3505,10 +3294,7 @@
                                   "properties": {
                                     "logicalOperator": {
                                       "type": "string",
-                                      "enum": [
-                                        "OR",
-                                        "AND"
-                                      ]
+                                      "enum": ["OR", "AND"]
                                     },
                                     "comparisons": {
                                       "type": "array",
@@ -3542,25 +3328,17 @@
                                             "type": "string"
                                           }
                                         },
-                                        "required": [
-                                          "id"
-                                        ]
+                                        "required": ["id"]
                                       }
                                     }
                                   }
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type",
-                          "items"
-                        ]
+                        "required": ["id", "type", "items"]
                       },
                       {
                         "type": "object",
@@ -3573,9 +3351,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Redirect"
-                            ]
+                            "enum": ["Redirect"]
                           },
                           "options": {
                             "type": "object",
@@ -3589,10 +3365,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3605,9 +3378,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Set variable"
-                            ]
+                            "enum": ["Set variable"]
                           },
                           "options": {
                             "oneOf": [
@@ -3639,19 +3410,13 @@
                                   },
                                   "type": {
                                     "type": "string",
-                                    "enum": [
-                                      "Now",
-                                      "Yesterday",
-                                      "Tomorrow"
-                                    ]
+                                    "enum": ["Now", "Yesterday", "Tomorrow"]
                                   },
                                   "timeZone": {
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "type"
-                                ]
+                                "required": ["type"]
                               },
                               {
                                 "type": "object",
@@ -3677,9 +3442,7 @@
                                     ]
                                   }
                                 },
-                                "required": [
-                                  "type"
-                                ]
+                                "required": ["type"]
                               },
                               {
                                 "type": "object",
@@ -3692,9 +3455,7 @@
                                   },
                                   "type": {
                                     "type": "string",
-                                    "enum": [
-                                      "Custom"
-                                    ]
+                                    "enum": ["Custom"]
                                   },
                                   "expressionToEvaluate": {
                                     "type": "string"
@@ -3703,9 +3464,7 @@
                                     "type": "boolean"
                                   }
                                 },
-                                "required": [
-                                  "type"
-                                ]
+                                "required": ["type"]
                               },
                               {
                                 "type": "object",
@@ -3718,9 +3477,7 @@
                                   },
                                   "type": {
                                     "type": "string",
-                                    "enum": [
-                                      "Map item with same index"
-                                    ]
+                                    "enum": ["Map item with same index"]
                                   },
                                   "mapListItemParams": {
                                     "type": "object",
@@ -3737,9 +3494,7 @@
                                     }
                                   }
                                 },
-                                "required": [
-                                  "type"
-                                ]
+                                "required": ["type"]
                               },
                               {
                                 "type": "object",
@@ -3752,25 +3507,18 @@
                                   },
                                   "type": {
                                     "type": "string",
-                                    "enum": [
-                                      "Append value(s)"
-                                    ]
+                                    "enum": ["Append value(s)"]
                                   },
                                   "item": {
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "type"
-                                ]
+                                "required": ["type"]
                               }
                             ]
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3783,9 +3531,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Typebot link"
-                            ]
+                            "enum": ["Typebot link"]
                           },
                           "options": {
                             "type": "object",
@@ -3802,10 +3548,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3818,9 +3561,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Wait"
-                            ]
+                            "enum": ["Wait"]
                           },
                           "options": {
                             "type": "object",
@@ -3834,10 +3575,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3850,9 +3588,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Jump"
-                            ]
+                            "enum": ["Jump"]
                           },
                           "options": {
                             "type": "object",
@@ -3866,10 +3602,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -3882,9 +3615,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "AB test"
-                            ]
+                            "enum": ["AB test"]
                           },
                           "items": {
                             "type": "array",
@@ -3906,15 +3637,10 @@
                                     },
                                     "path": {
                                       "type": "string",
-                                      "enum": [
-                                        "a"
-                                      ]
+                                      "enum": ["a"]
                                     }
                                   },
-                                  "required": [
-                                    "id",
-                                    "path"
-                                  ]
+                                  "required": ["id", "path"]
                                 },
                                 {
                                   "type": "object",
@@ -3930,15 +3656,10 @@
                                     },
                                     "path": {
                                       "type": "string",
-                                      "enum": [
-                                        "b"
-                                      ]
+                                      "enum": ["b"]
                                     }
                                   },
-                                  "required": [
-                                    "id",
-                                    "path"
-                                  ]
+                                  "required": ["id", "path"]
                                 }
                               ]
                             }
@@ -3954,11 +3675,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type",
-                          "items"
-                        ]
+                        "required": ["id", "type", "items"]
                       },
                       {
                         "type": "object",
@@ -3971,19 +3688,14 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Chatwoot"
-                            ]
+                            "enum": ["Chatwoot"]
                           },
                           "options": {
                             "type": "object",
                             "properties": {
                               "task": {
                                 "type": "string",
-                                "enum": [
-                                  "Show widget",
-                                  "Close widget"
-                                ]
+                                "enum": ["Show widget", "Close widget"]
                               },
                               "baseUrl": {
                                 "type": "string"
@@ -4014,10 +3726,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -4030,9 +3739,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Google Analytics"
-                            ]
+                            "enum": ["Google Analytics"]
                           },
                           "options": {
                             "type": "object",
@@ -4063,10 +3770,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -4079,9 +3783,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Google Sheets"
-                            ]
+                            "enum": ["Google Sheets"]
                           },
                           "options": {
                             "oneOf": [
@@ -4099,9 +3801,7 @@
                                   },
                                   "action": {
                                     "type": "string",
-                                    "enum": [
-                                      "Get data from sheet"
-                                    ]
+                                    "enum": ["Get data from sheet"]
                                   },
                                   "referenceCell": {
                                     "type": "object",
@@ -4116,9 +3816,7 @@
                                         "type": "string"
                                       }
                                     },
-                                    "required": [
-                                      "id"
-                                    ]
+                                    "required": ["id"]
                                   },
                                   "filter": {
                                     "type": "object",
@@ -4155,17 +3853,12 @@
                                               "type": "string"
                                             }
                                           },
-                                          "required": [
-                                            "id"
-                                          ]
+                                          "required": ["id"]
                                         }
                                       },
                                       "logicalOperator": {
                                         "type": "string",
-                                        "enum": [
-                                          "OR",
-                                          "AND"
-                                        ]
+                                        "enum": ["OR", "AND"]
                                       }
                                     }
                                   },
@@ -4184,24 +3877,15 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "totalRowsToExtract": {
                                     "type": "string",
-                                    "enum": [
-                                      "All",
-                                      "First",
-                                      "Last",
-                                      "Random"
-                                    ]
+                                    "enum": ["All", "First", "Last", "Random"]
                                   }
                                 },
-                                "required": [
-                                  "action"
-                                ]
+                                "required": ["action"]
                               },
                               {
                                 "type": "object",
@@ -4217,9 +3901,7 @@
                                   },
                                   "action": {
                                     "type": "string",
-                                    "enum": [
-                                      "Insert a row"
-                                    ]
+                                    "enum": ["Insert a row"]
                                   },
                                   "cellsToInsert": {
                                     "type": "array",
@@ -4236,15 +3918,11 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   }
                                 },
-                                "required": [
-                                  "action"
-                                ]
+                                "required": ["action"]
                               },
                               {
                                 "type": "object",
@@ -4260,9 +3938,7 @@
                                   },
                                   "action": {
                                     "type": "string",
-                                    "enum": [
-                                      "Update a row"
-                                    ]
+                                    "enum": ["Update a row"]
                                   },
                                   "cellsToUpsert": {
                                     "type": "array",
@@ -4279,9 +3955,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "referenceCell": {
@@ -4297,9 +3971,7 @@
                                         "type": "string"
                                       }
                                     },
-                                    "required": [
-                                      "id"
-                                    ]
+                                    "required": ["id"]
                                   },
                                   "filter": {
                                     "type": "object",
@@ -4336,24 +4008,17 @@
                                               "type": "string"
                                             }
                                           },
-                                          "required": [
-                                            "id"
-                                          ]
+                                          "required": ["id"]
                                         }
                                       },
                                       "logicalOperator": {
                                         "type": "string",
-                                        "enum": [
-                                          "OR",
-                                          "AND"
-                                        ]
+                                        "enum": ["OR", "AND"]
                                       }
                                     }
                                   }
                                 },
-                                "required": [
-                                  "action"
-                                ]
+                                "required": ["action"]
                               },
                               {
                                 "type": "object",
@@ -4372,10 +4037,7 @@
                             ]
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -4388,9 +4050,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Make.com"
-                            ]
+                            "enum": ["Make.com"]
                           },
                           "options": {
                             "type": "object",
@@ -4410,9 +4070,7 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "responseVariableMapping": {
@@ -4430,9 +4088,7 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "isAdvancedConfig": {
@@ -4465,9 +4121,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "headers": {
@@ -4485,9 +4139,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "method": {
@@ -4511,9 +4163,7 @@
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "id"
-                                ]
+                                "required": ["id"]
                               },
                               "timeout": {
                                 "type": "number",
@@ -4526,10 +4176,7 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -4542,9 +4189,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "OpenAI"
-                            ]
+                            "enum": ["OpenAI"]
                           },
                           "options": {
                             "oneOf": [
@@ -4567,9 +4212,7 @@
                                 "properties": {
                                   "task": {
                                     "type": "string",
-                                    "enum": [
-                                      "Create chat completion"
-                                    ]
+                                    "enum": ["Create chat completion"]
                                   },
                                   "model": {
                                     "type": "string"
@@ -4599,9 +4242,7 @@
                                               "type": "string"
                                             }
                                           },
-                                          "required": [
-                                            "id"
-                                          ]
+                                          "required": ["id"]
                                         },
                                         {
                                           "type": "object",
@@ -4611,9 +4252,7 @@
                                             },
                                             "role": {
                                               "type": "string",
-                                              "enum": [
-                                                "Messages sequence ✨"
-                                              ]
+                                              "enum": ["Messages sequence ✨"]
                                             },
                                             "content": {
                                               "type": "object",
@@ -4627,10 +4266,7 @@
                                               }
                                             }
                                           },
-                                          "required": [
-                                            "id",
-                                            "role"
-                                          ]
+                                          "required": ["id", "role"]
                                         },
                                         {
                                           "type": "object",
@@ -4640,25 +4276,17 @@
                                             },
                                             "role": {
                                               "type": "string",
-                                              "enum": [
-                                                "Dialogue"
-                                              ]
+                                              "enum": ["Dialogue"]
                                             },
                                             "dialogueVariableId": {
                                               "type": "string"
                                             },
                                             "startsBy": {
                                               "type": "string",
-                                              "enum": [
-                                                "user",
-                                                "assistant"
-                                              ]
+                                              "enum": ["user", "assistant"]
                                             }
                                           },
-                                          "required": [
-                                            "id",
-                                            "role"
-                                          ]
+                                          "required": ["id", "role"]
                                         }
                                       ]
                                     }
@@ -4695,10 +4323,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id",
-                                        "valueToExtract"
-                                      ]
+                                      "required": ["id", "valueToExtract"]
                                     }
                                   },
                                   "credentialsId": {
@@ -4711,18 +4336,14 @@
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "task"
-                                ]
+                                "required": ["task"]
                               },
                               {
                                 "type": "object",
                                 "properties": {
                                   "task": {
                                     "type": "string",
-                                    "enum": [
-                                      "Create image"
-                                    ]
+                                    "enum": ["Create image"]
                                   },
                                   "prompt": {
                                     "type": "string"
@@ -4750,18 +4371,13 @@
                                         },
                                         "valueToExtract": {
                                           "type": "string",
-                                          "enum": [
-                                            "Image URL"
-                                          ]
+                                          "enum": ["Image URL"]
                                         },
                                         "variableId": {
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id",
-                                        "valueToExtract"
-                                      ]
+                                      "required": ["id", "valueToExtract"]
                                     }
                                   },
                                   "credentialsId": {
@@ -4794,9 +4410,7 @@
                                   },
                                   "task": {
                                     "type": "string",
-                                    "enum": [
-                                      "Create speech"
-                                    ]
+                                    "enum": ["Create speech"]
                                   },
                                   "model": {
                                     "type": "string"
@@ -4819,17 +4433,12 @@
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "task"
-                                ]
+                                "required": ["task"]
                               }
                             ]
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -4842,9 +4451,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Pabbly"
-                            ]
+                            "enum": ["Pabbly"]
                           },
                           "options": {
                             "type": "object",
@@ -4864,9 +4471,7 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "responseVariableMapping": {
@@ -4884,9 +4489,7 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "isAdvancedConfig": {
@@ -4919,9 +4522,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "headers": {
@@ -4939,9 +4540,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "method": {
@@ -4965,9 +4564,7 @@
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "id"
-                                ]
+                                "required": ["id"]
                               },
                               "timeout": {
                                 "type": "number",
@@ -4980,10 +4577,7 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -4996,9 +4590,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Email"
-                            ]
+                            "enum": ["Email"]
                           },
                           "options": {
                             "type": "object",
@@ -5045,10 +4637,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -5061,9 +4650,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Webhook"
-                            ],
+                            "enum": ["Webhook"],
                             "description": "Legacy name for HTTP Request block"
                           },
                           "options": {
@@ -5084,9 +4671,7 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "responseVariableMapping": {
@@ -5104,9 +4689,7 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "isAdvancedConfig": {
@@ -5139,9 +4722,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "headers": {
@@ -5159,9 +4740,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "method": {
@@ -5185,9 +4764,7 @@
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "id"
-                                ]
+                                "required": ["id"]
                               },
                               "timeout": {
                                 "type": "number",
@@ -5200,10 +4777,7 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -5216,9 +4790,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Zapier"
-                            ]
+                            "enum": ["Zapier"]
                           },
                           "options": {
                             "type": "object",
@@ -5238,9 +4810,7 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "responseVariableMapping": {
@@ -5258,9 +4828,7 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "isAdvancedConfig": {
@@ -5293,9 +4861,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "headers": {
@@ -5313,9 +4879,7 @@
                                           "type": "string"
                                         }
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "method": {
@@ -5339,9 +4903,7 @@
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "id"
-                                ]
+                                "required": ["id"]
                               },
                               "timeout": {
                                 "type": "number",
@@ -5354,10 +4916,7 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -5370,9 +4929,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Pixel"
-                            ]
+                            "enum": ["Pixel"]
                           },
                           "options": {
                             "oneOf": [
@@ -5398,9 +4955,7 @@
                                         },
                                         "value": {}
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   }
                                 }
@@ -5427,9 +4982,7 @@
                                         },
                                         "value": {}
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "eventType": {
@@ -5455,9 +5008,7 @@
                                     ]
                                   }
                                 },
-                                "required": [
-                                  "eventType"
-                                ]
+                                "required": ["eventType"]
                               },
                               {
                                 "type": "object",
@@ -5481,32 +5032,23 @@
                                         },
                                         "value": {}
                                       },
-                                      "required": [
-                                        "id"
-                                      ]
+                                      "required": ["id"]
                                     }
                                   },
                                   "eventType": {
                                     "type": "string",
-                                    "enum": [
-                                      "Custom"
-                                    ]
+                                    "enum": ["Custom"]
                                   },
                                   "name": {
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "eventType"
-                                ]
+                                "required": ["eventType"]
                               }
                             ]
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       },
                       {
                         "type": "object",
@@ -5519,9 +5061,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Zemantic AI"
-                            ]
+                            "enum": ["Zemantic AI"]
                           },
                           "blockId": {
                             "type": "string"
@@ -5557,39 +5097,25 @@
                                     },
                                     "valueToExtract": {
                                       "type": "string",
-                                      "enum": [
-                                        "Summary",
-                                        "Results"
-                                      ]
+                                      "enum": ["Summary", "Results"]
                                     },
                                     "variableId": {
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id",
-                                    "valueToExtract"
-                                  ]
+                                  "required": ["id", "valueToExtract"]
                                 }
                               }
                             }
                           }
                         },
-                        "required": [
-                          "id",
-                          "type"
-                        ]
+                        "required": ["id", "type"]
                       }
                     ]
                   }
                 }
               },
-              "required": [
-                "id",
-                "title",
-                "graphCoordinates",
-                "blocks"
-              ]
+              "required": ["id", "title", "graphCoordinates", "blocks"]
             }
           },
           "events": {
@@ -5615,9 +5141,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "blockId"
-                      ]
+                      "required": ["blockId"]
                     },
                     {
                       "type": "object",
@@ -5626,9 +5150,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "eventId"
-                      ]
+                      "required": ["eventId"]
                     }
                   ]
                 },
@@ -5642,16 +5164,10 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "groupId"
-                  ]
+                  "required": ["groupId"]
                 }
               },
-              "required": [
-                "id",
-                "from",
-                "to"
-              ]
+              "required": ["id", "from", "to"]
             }
           },
           "variables": {
@@ -5681,10 +5197,7 @@
                   ]
                 }
               },
-              "required": [
-                "id",
-                "name"
-              ]
+              "required": ["id", "name"]
             }
           },
           "settings": {
@@ -5717,9 +5230,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "text input"
-            ]
+            "enum": ["text input"]
           },
           "options": {
             "type": "object",
@@ -5744,10 +5255,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "Text"
       },
       "buttonsInputV5": {
@@ -5761,9 +5269,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "choice input"
-            ]
+            "enum": ["choice input"]
           },
           "items": {
             "type": "array",
@@ -5793,10 +5299,7 @@
                       "properties": {
                         "logicalOperator": {
                           "type": "string",
-                          "enum": [
-                            "OR",
-                            "AND"
-                          ]
+                          "enum": ["OR", "AND"]
                         },
                         "comparisons": {
                           "type": "array",
@@ -5830,9 +5333,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "id"
-                            ]
+                            "required": ["id"]
                           }
                         }
                       }
@@ -5840,9 +5341,7 @@
                   }
                 }
               },
-              "required": [
-                "id"
-              ]
+              "required": ["id"]
             }
           },
           "options": {
@@ -5869,11 +5368,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type",
-          "items"
-        ],
+        "required": ["id", "type", "items"],
         "title": "Buttons v5"
       },
       "email": {
@@ -5887,9 +5382,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "email input"
-            ]
+            "enum": ["email input"]
           },
           "options": {
             "type": "object",
@@ -5914,10 +5407,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "Email"
       },
       "numberInput": {
@@ -5931,9 +5421,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "number input"
-            ]
+            "enum": ["number input"]
           },
           "options": {
             "type": "object",
@@ -5979,10 +5467,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "Number"
       },
       "url": {
@@ -5996,9 +5481,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "url input"
-            ]
+            "enum": ["url input"]
           },
           "options": {
             "type": "object",
@@ -6023,10 +5506,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "URL"
       },
       "phoneNumberInput": {
@@ -6040,9 +5520,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "phone number input"
-            ]
+            "enum": ["phone number input"]
           },
           "options": {
             "type": "object",
@@ -6070,10 +5548,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "Phone number"
       },
       "dateInput": {
@@ -6087,9 +5562,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "date input"
-            ]
+            "enum": ["date input"]
           },
           "options": {
             "type": "object",
@@ -6129,10 +5602,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "Date"
       },
       "paymentInput": {
@@ -6146,9 +5616,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "payment input"
-            ]
+            "enum": ["payment input"]
           },
           "options": {
             "type": "object",
@@ -6158,9 +5626,7 @@
               },
               "provider": {
                 "type": "string",
-                "enum": [
-                  "Stripe"
-                ]
+                "enum": ["Stripe"]
               },
               "labels": {
                 "type": "object",
@@ -6228,10 +5694,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "Payment"
       },
       "rating": {
@@ -6245,9 +5708,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "rating input"
-            ]
+            "enum": ["rating input"]
           },
           "options": {
             "type": "object",
@@ -6259,15 +5720,11 @@
                 "anyOf": [
                   {
                     "type": "string",
-                    "enum": [
-                      "Icons"
-                    ]
+                    "enum": ["Icons"]
                   },
                   {
                     "type": "string",
-                    "enum": [
-                      "Numbers"
-                    ]
+                    "enum": ["Numbers"]
                   }
                 ]
               },
@@ -6313,10 +5770,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "Rating"
       },
       "fileInputV5": {
@@ -6330,9 +5784,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "file input"
-            ]
+            "enum": ["file input"]
           },
           "options": {
             "type": "object",
@@ -6379,19 +5831,12 @@
               },
               "visibility": {
                 "type": "string",
-                "enum": [
-                  "Auto",
-                  "Public",
-                  "Private"
-                ]
+                "enum": ["Auto", "Public", "Private"]
               }
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "File input v5"
       },
       "pictureChoiceV5": {
@@ -6405,9 +5850,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "picture choice input"
-            ]
+            "enum": ["picture choice input"]
           },
           "items": {
             "type": "array",
@@ -6443,10 +5886,7 @@
                       "properties": {
                         "logicalOperator": {
                           "type": "string",
-                          "enum": [
-                            "OR",
-                            "AND"
-                          ]
+                          "enum": ["OR", "AND"]
                         },
                         "comparisons": {
                           "type": "array",
@@ -6480,9 +5920,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "id"
-                            ]
+                            "required": ["id"]
                           }
                         }
                       }
@@ -6490,9 +5928,7 @@
                   }
                 }
               },
-              "required": [
-                "id"
-              ]
+              "required": ["id"]
             }
           },
           "options": {
@@ -6533,11 +5969,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type",
-          "items"
-        ],
+        "required": ["id", "type", "items"],
         "title": "Picture choice v5"
       },
       "settings": {
@@ -6569,10 +6001,7 @@
                   },
                   "storage": {
                     "type": "string",
-                    "enum": [
-                      "session",
-                      "local"
-                    ]
+                    "enum": ["session", "local"]
                   }
                 }
               }
@@ -6634,10 +6063,7 @@
                 "properties": {
                   "logicalOperator": {
                     "type": "string",
-                    "enum": [
-                      "OR",
-                      "AND"
-                    ]
+                    "enum": ["OR", "AND"]
                   },
                   "comparisons": {
                     "type": "array",
@@ -6668,16 +6094,11 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "id"
-                      ]
+                      "required": ["id"]
                     }
                   }
                 },
-                "required": [
-                  "logicalOperator",
-                  "comparisons"
-                ]
+                "required": ["logicalOperator", "comparisons"]
               },
               "sessionExpiryTimeout": {
                 "type": "number",
@@ -6727,26 +6148,20 @@
                         "properties": {
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Google"
-                            ]
+                            "enum": ["Google"]
                           },
                           "family": {
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "type"
-                        ]
+                        "required": ["type"]
                       },
                       {
                         "type": "object",
                         "properties": {
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Custom"
-                            ]
+                            "enum": ["Custom"]
                           },
                           "family": {
                             "type": "string"
@@ -6759,9 +6174,7 @@
                             "description": "Deprecated, use `css` instead"
                           }
                         },
-                        "required": [
-                          "type"
-                        ]
+                        "required": ["type"]
                       }
                     ]
                   }
@@ -6772,11 +6185,7 @@
                 "properties": {
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Color",
-                      "Image",
-                      "None"
-                    ]
+                    "enum": ["Color", "Image", "None"]
                   },
                   "content": {
                     "type": "string"
@@ -6797,20 +6206,14 @@
                   },
                   "placement": {
                     "type": "string",
-                    "enum": [
-                      "Top",
-                      "Bottom"
-                    ]
+                    "enum": ["Top", "Bottom"]
                   },
                   "thickness": {
                     "type": "number"
                   },
                   "position": {
                     "type": "string",
-                    "enum": [
-                      "fixed",
-                      "absolute"
-                    ]
+                    "enum": ["fixed", "absolute"]
                   }
                 }
               }
@@ -6890,11 +6293,7 @@
               },
               "roundness": {
                 "type": "string",
-                "enum": [
-                  "none",
-                  "medium",
-                  "large"
-                ]
+                "enum": ["none", "medium", "large"]
               }
             }
           },
@@ -6909,9 +6308,7 @@
         "properties": {
           "version": {
             "type": "string",
-            "enum": [
-              "6"
-            ]
+            "enum": ["6"]
           },
           "id": {
             "type": "string"
@@ -6954,9 +6351,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "blockId"
-                      ]
+                      "required": ["blockId"]
                     },
                     {
                       "type": "object",
@@ -6965,9 +6360,7 @@
                           "type": "string"
                         }
                       },
-                      "required": [
-                        "eventId"
-                      ]
+                      "required": ["eventId"]
                     }
                   ]
                 },
@@ -6981,16 +6374,10 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "groupId"
-                  ]
+                  "required": ["groupId"]
                 }
               },
-              "required": [
-                "id",
-                "from",
-                "to"
-              ]
+              "required": ["id", "from", "to"]
             }
           },
           "variables": {
@@ -7020,10 +6407,7 @@
                   ]
                 }
               },
-              "required": [
-                "id",
-                "name"
-              ]
+              "required": ["id", "name"]
             }
           },
           "settings": {
@@ -7064,10 +6448,7 @@
                 "type": "number"
               }
             },
-            "required": [
-              "x",
-              "y"
-            ]
+            "required": ["x", "y"]
           },
           "blocks": {
             "type": "array",
@@ -7076,12 +6457,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "title",
-          "graphCoordinates",
-          "blocks"
-        ],
+        "required": ["id", "title", "graphCoordinates", "blocks"],
         "title": "Group V6"
       },
       "block": {
@@ -7099,9 +6475,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "text"
-                    ]
+                    "enum": ["text"]
                   },
                   "content": {
                     "type": "object",
@@ -7119,10 +6493,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7135,9 +6506,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "image"
-                    ]
+                    "enum": ["image"]
                   },
                   "content": {
                     "type": "object",
@@ -7159,10 +6528,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7175,9 +6541,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "video"
-                    ]
+                    "enum": ["video"]
                   },
                   "content": {
                     "type": "object",
@@ -7190,13 +6554,7 @@
                       },
                       "type": {
                         "type": "string",
-                        "enum": [
-                          "url",
-                          "youtube",
-                          "vimeo",
-                          "tiktok",
-                          "gumlet"
-                        ]
+                        "enum": ["url", "youtube", "vimeo", "tiktok", "gumlet"]
                       },
                       "height": {
                         "anyOf": [
@@ -7215,10 +6573,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7231,9 +6586,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "embed"
-                    ]
+                    "enum": ["embed"]
                   },
                   "content": {
                     "type": "object",
@@ -7252,10 +6605,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7268,9 +6618,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "audio"
-                    ]
+                    "enum": ["audio"]
                   },
                   "content": {
                     "type": "object",
@@ -7284,10 +6632,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "$ref": "#/components/schemas/textInput"
@@ -7333,9 +6678,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Code"
-                    ]
+                    "enum": ["Code"]
                   },
                   "options": {
                     "type": "object",
@@ -7355,10 +6698,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7371,9 +6711,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Condition"
-                    ]
+                    "enum": ["Condition"]
                   },
                   "items": {
                     "type": "array",
@@ -7391,10 +6729,7 @@
                           "properties": {
                             "logicalOperator": {
                               "type": "string",
-                              "enum": [
-                                "OR",
-                                "AND"
-                              ]
+                              "enum": ["OR", "AND"]
                             },
                             "comparisons": {
                               "type": "array",
@@ -7428,25 +6763,17 @@
                                     "type": "string"
                                   }
                                 },
-                                "required": [
-                                  "id"
-                                ]
+                                "required": ["id"]
                               }
                             }
                           }
                         }
                       },
-                      "required": [
-                        "id"
-                      ]
+                      "required": ["id"]
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type",
-                  "items"
-                ]
+                "required": ["id", "type", "items"]
               },
               {
                 "type": "object",
@@ -7459,9 +6786,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Redirect"
-                    ]
+                    "enum": ["Redirect"]
                   },
                   "options": {
                     "type": "object",
@@ -7475,10 +6800,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7491,9 +6813,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Set variable"
-                    ]
+                    "enum": ["Set variable"]
                   },
                   "options": {
                     "oneOf": [
@@ -7525,19 +6845,13 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Now",
-                              "Yesterday",
-                              "Tomorrow"
-                            ]
+                            "enum": ["Now", "Yesterday", "Tomorrow"]
                           },
                           "timeZone": {
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "type"
-                        ]
+                        "required": ["type"]
                       },
                       {
                         "type": "object",
@@ -7563,9 +6877,7 @@
                             ]
                           }
                         },
-                        "required": [
-                          "type"
-                        ]
+                        "required": ["type"]
                       },
                       {
                         "type": "object",
@@ -7578,9 +6890,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Custom"
-                            ]
+                            "enum": ["Custom"]
                           },
                           "expressionToEvaluate": {
                             "type": "string"
@@ -7589,9 +6899,7 @@
                             "type": "boolean"
                           }
                         },
-                        "required": [
-                          "type"
-                        ]
+                        "required": ["type"]
                       },
                       {
                         "type": "object",
@@ -7604,9 +6912,7 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Map item with same index"
-                            ]
+                            "enum": ["Map item with same index"]
                           },
                           "mapListItemParams": {
                             "type": "object",
@@ -7623,9 +6929,7 @@
                             }
                           }
                         },
-                        "required": [
-                          "type"
-                        ]
+                        "required": ["type"]
                       },
                       {
                         "type": "object",
@@ -7638,25 +6942,18 @@
                           },
                           "type": {
                             "type": "string",
-                            "enum": [
-                              "Append value(s)"
-                            ]
+                            "enum": ["Append value(s)"]
                           },
                           "item": {
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "type"
-                        ]
+                        "required": ["type"]
                       }
                     ]
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7669,9 +6966,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Typebot link"
-                    ]
+                    "enum": ["Typebot link"]
                   },
                   "options": {
                     "type": "object",
@@ -7688,10 +6983,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7704,9 +6996,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Wait"
-                    ]
+                    "enum": ["Wait"]
                   },
                   "options": {
                     "type": "object",
@@ -7720,10 +7010,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7736,9 +7023,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Jump"
-                    ]
+                    "enum": ["Jump"]
                   },
                   "options": {
                     "type": "object",
@@ -7752,10 +7037,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7768,9 +7050,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "AB test"
-                    ]
+                    "enum": ["AB test"]
                   },
                   "items": {
                     "type": "array",
@@ -7789,15 +7069,10 @@
                             },
                             "path": {
                               "type": "string",
-                              "enum": [
-                                "a"
-                              ]
+                              "enum": ["a"]
                             }
                           },
-                          "required": [
-                            "id",
-                            "path"
-                          ]
+                          "required": ["id", "path"]
                         },
                         {
                           "type": "object",
@@ -7810,15 +7085,10 @@
                             },
                             "path": {
                               "type": "string",
-                              "enum": [
-                                "b"
-                              ]
+                              "enum": ["b"]
                             }
                           },
-                          "required": [
-                            "id",
-                            "path"
-                          ]
+                          "required": ["id", "path"]
                         }
                       ]
                     }
@@ -7834,11 +7104,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type",
-                  "items"
-                ]
+                "required": ["id", "type", "items"]
               },
               {
                 "type": "object",
@@ -7851,19 +7117,14 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Chatwoot"
-                    ]
+                    "enum": ["Chatwoot"]
                   },
                   "options": {
                     "type": "object",
                     "properties": {
                       "task": {
                         "type": "string",
-                        "enum": [
-                          "Show widget",
-                          "Close widget"
-                        ]
+                        "enum": ["Show widget", "Close widget"]
                       },
                       "baseUrl": {
                         "type": "string"
@@ -7894,10 +7155,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7910,9 +7168,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Google Analytics"
-                    ]
+                    "enum": ["Google Analytics"]
                   },
                   "options": {
                     "type": "object",
@@ -7943,10 +7199,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -7959,9 +7212,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Google Sheets"
-                    ]
+                    "enum": ["Google Sheets"]
                   },
                   "options": {
                     "oneOf": [
@@ -7979,9 +7230,7 @@
                           },
                           "action": {
                             "type": "string",
-                            "enum": [
-                              "Get data from sheet"
-                            ]
+                            "enum": ["Get data from sheet"]
                           },
                           "filter": {
                             "type": "object",
@@ -8018,17 +7267,12 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "logicalOperator": {
                                 "type": "string",
-                                "enum": [
-                                  "OR",
-                                  "AND"
-                                ]
+                                "enum": ["OR", "AND"]
                               }
                             }
                           },
@@ -8047,24 +7291,15 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "totalRowsToExtract": {
                             "type": "string",
-                            "enum": [
-                              "All",
-                              "First",
-                              "Last",
-                              "Random"
-                            ]
+                            "enum": ["All", "First", "Last", "Random"]
                           }
                         },
-                        "required": [
-                          "action"
-                        ]
+                        "required": ["action"]
                       },
                       {
                         "type": "object",
@@ -8080,9 +7315,7 @@
                           },
                           "action": {
                             "type": "string",
-                            "enum": [
-                              "Insert a row"
-                            ]
+                            "enum": ["Insert a row"]
                           },
                           "cellsToInsert": {
                             "type": "array",
@@ -8099,15 +7332,11 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           }
                         },
-                        "required": [
-                          "action"
-                        ]
+                        "required": ["action"]
                       },
                       {
                         "type": "object",
@@ -8123,9 +7352,7 @@
                           },
                           "action": {
                             "type": "string",
-                            "enum": [
-                              "Update a row"
-                            ]
+                            "enum": ["Update a row"]
                           },
                           "cellsToUpsert": {
                             "type": "array",
@@ -8142,9 +7369,7 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "filter": {
@@ -8182,24 +7407,17 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 }
                               },
                               "logicalOperator": {
                                 "type": "string",
-                                "enum": [
-                                  "OR",
-                                  "AND"
-                                ]
+                                "enum": ["OR", "AND"]
                               }
                             }
                           }
                         },
-                        "required": [
-                          "action"
-                        ]
+                        "required": ["action"]
                       },
                       {
                         "type": "object",
@@ -8218,10 +7436,7 @@
                     ]
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -8234,9 +7449,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Make.com"
-                    ]
+                    "enum": ["Make.com"]
                   },
                   "options": {
                     "type": "object",
@@ -8256,9 +7469,7 @@
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id"
-                          ]
+                          "required": ["id"]
                         }
                       },
                       "responseVariableMapping": {
@@ -8276,9 +7487,7 @@
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id"
-                          ]
+                          "required": ["id"]
                         }
                       },
                       "isAdvancedConfig": {
@@ -8308,9 +7517,7 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "headers": {
@@ -8328,9 +7535,7 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "method": {
@@ -8363,10 +7568,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -8379,9 +7581,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "OpenAI"
-                    ]
+                    "enum": ["OpenAI"]
                   },
                   "options": {
                     "oneOf": [
@@ -8404,9 +7604,7 @@
                         "properties": {
                           "task": {
                             "type": "string",
-                            "enum": [
-                              "Create chat completion"
-                            ]
+                            "enum": ["Create chat completion"]
                           },
                           "model": {
                             "type": "string"
@@ -8423,11 +7621,7 @@
                                     },
                                     "role": {
                                       "type": "string",
-                                      "enum": [
-                                        "system",
-                                        "user",
-                                        "assistant"
-                                      ]
+                                      "enum": ["system", "user", "assistant"]
                                     },
                                     "content": {
                                       "type": "string"
@@ -8436,9 +7630,7 @@
                                       "type": "string"
                                     }
                                   },
-                                  "required": [
-                                    "id"
-                                  ]
+                                  "required": ["id"]
                                 },
                                 {
                                   "type": "object",
@@ -8448,9 +7640,7 @@
                                     },
                                     "role": {
                                       "type": "string",
-                                      "enum": [
-                                        "Messages sequence ✨"
-                                      ]
+                                      "enum": ["Messages sequence ✨"]
                                     },
                                     "content": {
                                       "type": "object",
@@ -8464,10 +7654,7 @@
                                       }
                                     }
                                   },
-                                  "required": [
-                                    "id",
-                                    "role"
-                                  ]
+                                  "required": ["id", "role"]
                                 },
                                 {
                                   "type": "object",
@@ -8477,25 +7664,17 @@
                                     },
                                     "role": {
                                       "type": "string",
-                                      "enum": [
-                                        "Dialogue"
-                                      ]
+                                      "enum": ["Dialogue"]
                                     },
                                     "dialogueVariableId": {
                                       "type": "string"
                                     },
                                     "startsBy": {
                                       "type": "string",
-                                      "enum": [
-                                        "user",
-                                        "assistant"
-                                      ]
+                                      "enum": ["user", "assistant"]
                                     }
                                   },
-                                  "required": [
-                                    "id",
-                                    "role"
-                                  ]
+                                  "required": ["id", "role"]
                                 }
                               ]
                             }
@@ -8523,19 +7702,13 @@
                                 },
                                 "valueToExtract": {
                                   "type": "string",
-                                  "enum": [
-                                    "Message content",
-                                    "Total tokens"
-                                  ]
+                                  "enum": ["Message content", "Total tokens"]
                                 },
                                 "variableId": {
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id",
-                                "valueToExtract"
-                              ]
+                              "required": ["id", "valueToExtract"]
                             }
                           },
                           "credentialsId": {
@@ -8548,18 +7721,14 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "task"
-                        ]
+                        "required": ["task"]
                       },
                       {
                         "type": "object",
                         "properties": {
                           "task": {
                             "type": "string",
-                            "enum": [
-                              "Create image"
-                            ]
+                            "enum": ["Create image"]
                           },
                           "prompt": {
                             "type": "string"
@@ -8569,11 +7738,7 @@
                             "properties": {
                               "size": {
                                 "type": "string",
-                                "enum": [
-                                  "256x256",
-                                  "512x512",
-                                  "1024x1024"
-                                ]
+                                "enum": ["256x256", "512x512", "1024x1024"]
                               }
                             }
                           },
@@ -8587,18 +7752,13 @@
                                 },
                                 "valueToExtract": {
                                   "type": "string",
-                                  "enum": [
-                                    "Image URL"
-                                  ]
+                                  "enum": ["Image URL"]
                                 },
                                 "variableId": {
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id",
-                                "valueToExtract"
-                              ]
+                              "required": ["id", "valueToExtract"]
                             }
                           },
                           "credentialsId": {
@@ -8631,9 +7791,7 @@
                           },
                           "task": {
                             "type": "string",
-                            "enum": [
-                              "Create speech"
-                            ]
+                            "enum": ["Create speech"]
                           },
                           "model": {
                             "type": "string"
@@ -8656,17 +7814,12 @@
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "task"
-                        ]
+                        "required": ["task"]
                       }
                     ]
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -8679,9 +7832,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Pabbly"
-                    ]
+                    "enum": ["Pabbly"]
                   },
                   "options": {
                     "type": "object",
@@ -8701,9 +7852,7 @@
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id"
-                          ]
+                          "required": ["id"]
                         }
                       },
                       "responseVariableMapping": {
@@ -8721,9 +7870,7 @@
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id"
-                          ]
+                          "required": ["id"]
                         }
                       },
                       "isAdvancedConfig": {
@@ -8753,9 +7900,7 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "headers": {
@@ -8773,9 +7918,7 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "method": {
@@ -8808,10 +7951,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -8824,9 +7964,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Email"
-                    ]
+                    "enum": ["Email"]
                   },
                   "options": {
                     "type": "object",
@@ -8873,10 +8011,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -8889,9 +8024,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Webhook"
-                    ],
+                    "enum": ["Webhook"],
                     "description": "Legacy name for HTTP Request block"
                   },
                   "options": {
@@ -8912,9 +8045,7 @@
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id"
-                          ]
+                          "required": ["id"]
                         }
                       },
                       "responseVariableMapping": {
@@ -8932,9 +8063,7 @@
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id"
-                          ]
+                          "required": ["id"]
                         }
                       },
                       "isAdvancedConfig": {
@@ -8964,9 +8093,7 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "headers": {
@@ -8984,9 +8111,7 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "method": {
@@ -9019,10 +8144,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -9035,9 +8157,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Zapier"
-                    ]
+                    "enum": ["Zapier"]
                   },
                   "options": {
                     "type": "object",
@@ -9057,9 +8177,7 @@
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id"
-                          ]
+                          "required": ["id"]
                         }
                       },
                       "responseVariableMapping": {
@@ -9077,9 +8195,7 @@
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id"
-                          ]
+                          "required": ["id"]
                         }
                       },
                       "isAdvancedConfig": {
@@ -9109,9 +8225,7 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "headers": {
@@ -9129,9 +8243,7 @@
                                   "type": "string"
                                 }
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "method": {
@@ -9164,10 +8276,7 @@
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -9180,9 +8289,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Pixel"
-                    ]
+                    "enum": ["Pixel"]
                   },
                   "options": {
                     "oneOf": [
@@ -9208,9 +8315,7 @@
                                 },
                                 "value": {}
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           }
                         }
@@ -9237,9 +8342,7 @@
                                 },
                                 "value": {}
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "eventType": {
@@ -9265,9 +8368,7 @@
                             ]
                           }
                         },
-                        "required": [
-                          "eventType"
-                        ]
+                        "required": ["eventType"]
                       },
                       {
                         "type": "object",
@@ -9291,32 +8392,23 @@
                                 },
                                 "value": {}
                               },
-                              "required": [
-                                "id"
-                              ]
+                              "required": ["id"]
                             }
                           },
                           "eventType": {
                             "type": "string",
-                            "enum": [
-                              "Custom"
-                            ]
+                            "enum": ["Custom"]
                           },
                           "name": {
                             "type": "string"
                           }
                         },
-                        "required": [
-                          "eventType"
-                        ]
+                        "required": ["eventType"]
                       }
                     ]
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               },
               {
                 "type": "object",
@@ -9329,9 +8421,7 @@
                   },
                   "type": {
                     "type": "string",
-                    "enum": [
-                      "Zemantic AI"
-                    ]
+                    "enum": ["Zemantic AI"]
                   },
                   "blockId": {
                     "type": "string"
@@ -9367,28 +8457,19 @@
                             },
                             "valueToExtract": {
                               "type": "string",
-                              "enum": [
-                                "Summary",
-                                "Results"
-                              ]
+                              "enum": ["Summary", "Results"]
                             },
                             "variableId": {
                               "type": "string"
                             }
                           },
-                          "required": [
-                            "id",
-                            "valueToExtract"
-                          ]
+                          "required": ["id", "valueToExtract"]
                         }
                       }
                     }
                   }
                 },
-                "required": [
-                  "id",
-                  "type"
-                ]
+                "required": ["id", "type"]
               }
             ]
           },
@@ -9419,10 +8500,7 @@
               },
               "options": {}
             },
-            "required": [
-              "id",
-              "type"
-            ]
+            "required": ["id", "type"]
           }
         ],
         "title": "Block"
@@ -9438,9 +8516,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "choice input"
-            ]
+            "enum": ["choice input"]
           },
           "items": {
             "type": "array",
@@ -9467,10 +8543,7 @@
                       "properties": {
                         "logicalOperator": {
                           "type": "string",
-                          "enum": [
-                            "OR",
-                            "AND"
-                          ]
+                          "enum": ["OR", "AND"]
                         },
                         "comparisons": {
                           "type": "array",
@@ -9504,9 +8577,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "id"
-                            ]
+                            "required": ["id"]
                           }
                         }
                       }
@@ -9514,9 +8585,7 @@
                   }
                 }
               },
-              "required": [
-                "id"
-              ]
+              "required": ["id"]
             }
           },
           "options": {
@@ -9543,11 +8612,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type",
-          "items"
-        ],
+        "required": ["id", "type", "items"],
         "title": "Buttons"
       },
       "fileInput": {
@@ -9561,9 +8626,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "file input"
-            ]
+            "enum": ["file input"]
           },
           "options": {
             "type": "object",
@@ -9607,19 +8670,12 @@
               },
               "visibility": {
                 "type": "string",
-                "enum": [
-                  "Auto",
-                  "Public",
-                  "Private"
-                ]
+                "enum": ["Auto", "Public", "Private"]
               }
             }
           }
         },
-        "required": [
-          "id",
-          "type"
-        ],
+        "required": ["id", "type"],
         "title": "File"
       },
       "pictureChoice": {
@@ -9633,9 +8689,7 @@
           },
           "type": {
             "type": "string",
-            "enum": [
-              "picture choice input"
-            ]
+            "enum": ["picture choice input"]
           },
           "items": {
             "type": "array",
@@ -9668,10 +8722,7 @@
                       "properties": {
                         "logicalOperator": {
                           "type": "string",
-                          "enum": [
-                            "OR",
-                            "AND"
-                          ]
+                          "enum": ["OR", "AND"]
                         },
                         "comparisons": {
                           "type": "array",
@@ -9705,9 +8756,7 @@
                                 "type": "string"
                               }
                             },
-                            "required": [
-                              "id"
-                            ]
+                            "required": ["id"]
                           }
                         }
                       }
@@ -9715,9 +8764,7 @@
                   }
                 }
               },
-              "required": [
-                "id"
-              ]
+              "required": ["id"]
             }
           },
           "options": {
@@ -9758,11 +8805,7 @@
             }
           }
         },
-        "required": [
-          "id",
-          "type",
-          "items"
-        ],
+        "required": ["id", "type", "items"],
         "title": "Picture choice"
       },
       "event": {
@@ -9784,23 +8827,14 @@
                 "type": "number"
               }
             },
-            "required": [
-              "x",
-              "y"
-            ]
+            "required": ["x", "y"]
           },
           "type": {
             "type": "string",
-            "enum": [
-              "start"
-            ]
+            "enum": ["start"]
           }
         },
-        "required": [
-          "id",
-          "graphCoordinates",
-          "type"
-        ],
+        "required": ["id", "graphCoordinates", "type"],
         "description": "Event"
       },
       "textMessage": {
@@ -9808,9 +8842,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "text"
-            ]
+            "enum": ["text"]
           },
           "content": {
             "type": "object",
@@ -9828,10 +8860,7 @@
             }
           }
         },
-        "required": [
-          "type",
-          "content"
-        ],
+        "required": ["type", "content"],
         "title": "Text"
       },
       "imageMessage": {
@@ -9839,9 +8868,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "image"
-            ]
+            "enum": ["image"]
           },
           "content": {
             "type": "object",
@@ -9863,10 +8890,7 @@
             }
           }
         },
-        "required": [
-          "type",
-          "content"
-        ],
+        "required": ["type", "content"],
         "title": "Image"
       },
       "videoMessage": {
@@ -9874,9 +8898,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "video"
-            ]
+            "enum": ["video"]
           },
           "content": {
             "type": "object",
@@ -9889,13 +8911,7 @@
               },
               "type": {
                 "type": "string",
-                "enum": [
-                  "url",
-                  "youtube",
-                  "vimeo",
-                  "tiktok",
-                  "gumlet"
-                ]
+                "enum": ["url", "youtube", "vimeo", "tiktok", "gumlet"]
               },
               "height": {
                 "anyOf": [
@@ -9914,10 +8930,7 @@
             }
           }
         },
-        "required": [
-          "type",
-          "content"
-        ],
+        "required": ["type", "content"],
         "title": "Video"
       },
       "audioMessage": {
@@ -9925,9 +8938,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "audio"
-            ]
+            "enum": ["audio"]
           },
           "content": {
             "type": "object",
@@ -9941,10 +8952,7 @@
             }
           }
         },
-        "required": [
-          "type",
-          "content"
-        ],
+        "required": ["type", "content"],
         "title": "Audio"
       },
       "embedMessage": {
@@ -9952,9 +8960,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "embed"
-            ]
+            "enum": ["embed"]
           },
           "content": {
             "type": "object",
@@ -9968,10 +8974,7 @@
             }
           }
         },
-        "required": [
-          "type",
-          "content"
-        ],
+        "required": ["type", "content"],
         "title": "Embed"
       },
       "customEmbedMessage": {
@@ -9979,9 +8982,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "custom-embed"
-            ]
+            "enum": ["custom-embed"]
           },
           "content": {
             "type": "object",
@@ -10000,10 +9001,7 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "args",
-                  "content"
-                ]
+                "required": ["args", "content"]
               },
               "initFunction": {
                 "type": "object",
@@ -10016,21 +9014,13 @@
                     "type": "string"
                   }
                 },
-                "required": [
-                  "args",
-                  "content"
-                ]
+                "required": ["args", "content"]
               }
             },
-            "required": [
-              "initFunction"
-            ]
+            "required": ["initFunction"]
           }
         },
-        "required": [
-          "type",
-          "content"
-        ],
+        "required": ["type", "content"],
         "title": "Custom embed"
       },
       "csaScriptToExecute": {
@@ -10038,9 +9028,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "scriptToExecute"
-            ]
+            "enum": ["scriptToExecute"]
           },
           "scriptToExecute": {
             "type": "object",
@@ -10086,16 +9074,11 @@
                       ]
                     }
                   },
-                  "required": [
-                    "id"
-                  ]
+                  "required": ["id"]
                 }
               }
             },
-            "required": [
-              "content",
-              "args"
-            ]
+            "required": ["content", "args"]
           },
           "lastBubbleBlockId": {
             "type": "string"
@@ -10104,10 +9087,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "scriptToExecute"
-        ],
+        "required": ["type", "scriptToExecute"],
         "title": "Script to execute"
       },
       "csaRedirect": {
@@ -10115,9 +9095,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "redirect"
-            ]
+            "enum": ["redirect"]
           },
           "redirect": {
             "type": "object",
@@ -10137,10 +9115,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "redirect"
-        ],
+        "required": ["type", "redirect"],
         "title": "Redirect"
       },
       "csaChatwoot": {
@@ -10148,9 +9123,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "chatwoot"
-            ]
+            "enum": ["chatwoot"]
           },
           "chatwoot": {
             "type": "object",
@@ -10199,21 +9172,14 @@
                           ]
                         }
                       },
-                      "required": [
-                        "id"
-                      ]
+                      "required": ["id"]
                     }
                   }
                 },
-                "required": [
-                  "content",
-                  "args"
-                ]
+                "required": ["content", "args"]
               }
             },
-            "required": [
-              "scriptToExecute"
-            ]
+            "required": ["scriptToExecute"]
           },
           "lastBubbleBlockId": {
             "type": "string"
@@ -10222,10 +9188,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "chatwoot"
-        ],
+        "required": ["type", "chatwoot"],
         "title": "Chatwoot"
       },
       "csaGa": {
@@ -10233,9 +9196,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "googleAnalytics"
-            ]
+            "enum": ["googleAnalytics"]
           },
           "googleAnalytics": {
             "type": "object",
@@ -10272,10 +9233,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "googleAnalytics"
-        ],
+        "required": ["type", "googleAnalytics"],
         "title": "Google Analytics"
       },
       "csaWait": {
@@ -10283,9 +9241,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "wait"
-            ]
+            "enum": ["wait"]
           },
           "wait": {
             "type": "object",
@@ -10294,9 +9250,7 @@
                 "type": "number"
               }
             },
-            "required": [
-              "secondsToWaitFor"
-            ]
+            "required": ["secondsToWaitFor"]
           },
           "lastBubbleBlockId": {
             "type": "string"
@@ -10305,10 +9259,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "wait"
-        ],
+        "required": ["type", "wait"],
         "title": "Wait"
       },
       "csaSetVariable": {
@@ -10316,9 +9267,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "setVariable"
-            ]
+            "enum": ["setVariable"]
           },
           "setVariable": {
             "type": "object",
@@ -10367,21 +9316,14 @@
                           ]
                         }
                       },
-                      "required": [
-                        "id"
-                      ]
+                      "required": ["id"]
                     }
                   }
                 },
-                "required": [
-                  "content",
-                  "args"
-                ]
+                "required": ["content", "args"]
               }
             },
-            "required": [
-              "scriptToExecute"
-            ]
+            "required": ["scriptToExecute"]
           },
           "lastBubbleBlockId": {
             "type": "string"
@@ -10390,10 +9332,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "setVariable"
-        ],
+        "required": ["type", "setVariable"],
         "title": "Set variable"
       },
       "csaStreamOpenAiChatCompletion": {
@@ -10401,9 +9340,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "streamOpenAiChatCompletion"
-            ]
+            "enum": ["streamOpenAiChatCompletion"]
           },
           "streamOpenAiChatCompletion": {
             "type": "object",
@@ -10418,19 +9355,13 @@
                     },
                     "role": {
                       "type": "string",
-                      "enum": [
-                        "system",
-                        "user",
-                        "assistant"
-                      ]
+                      "enum": ["system", "user", "assistant"]
                     }
                   }
                 }
               }
             },
-            "required": [
-              "messages"
-            ]
+            "required": ["messages"]
           },
           "lastBubbleBlockId": {
             "type": "string"
@@ -10439,10 +9370,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "streamOpenAiChatCompletion"
-        ],
+        "required": ["type", "streamOpenAiChatCompletion"],
         "title": "Stream OpenAI"
       },
       "csaExecWebhook": {
@@ -10450,9 +9378,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "webhookToExecute"
-            ]
+            "enum": ["webhookToExecute"]
           },
           "webhookToExecute": {
             "type": "object",
@@ -10482,9 +9408,7 @@
                 ]
               }
             },
-            "required": [
-              "url"
-            ]
+            "required": ["url"]
           },
           "lastBubbleBlockId": {
             "type": "string"
@@ -10493,10 +9417,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "webhookToExecute"
-        ],
+        "required": ["type", "webhookToExecute"],
         "title": "Execute webhook"
       },
       "csaInjectStartProps": {
@@ -10504,9 +9425,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "startPropsToInject"
-            ]
+            "enum": ["startPropsToInject"]
           },
           "startPropsToInject": {
             "type": "object",
@@ -10535,10 +9454,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "startPropsToInject"
-        ],
+        "required": ["type", "startPropsToInject"],
         "title": "Inject start props"
       },
       "csaPixel": {
@@ -10546,9 +9462,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "pixel"
-            ]
+            "enum": ["pixel"]
           },
           "pixel": {
             "oneOf": [
@@ -10574,9 +9488,7 @@
                         },
                         "value": {}
                       },
-                      "required": [
-                        "id"
-                      ]
+                      "required": ["id"]
                     }
                   }
                 }
@@ -10603,9 +9515,7 @@
                         },
                         "value": {}
                       },
-                      "required": [
-                        "id"
-                      ]
+                      "required": ["id"]
                     }
                   },
                   "eventType": {
@@ -10631,9 +9541,7 @@
                     ]
                   }
                 },
-                "required": [
-                  "eventType"
-                ]
+                "required": ["eventType"]
               },
               {
                 "type": "object",
@@ -10657,24 +9565,18 @@
                         },
                         "value": {}
                       },
-                      "required": [
-                        "id"
-                      ]
+                      "required": ["id"]
                     }
                   },
                   "eventType": {
                     "type": "string",
-                    "enum": [
-                      "Custom"
-                    ]
+                    "enum": ["Custom"]
                   },
                   "name": {
                     "type": "string"
                   }
                 },
-                "required": [
-                  "eventType"
-                ]
+                "required": ["eventType"]
               }
             ]
           },
@@ -10685,10 +9587,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "pixel"
-        ],
+        "required": ["type", "pixel"],
         "title": "Init Pixel"
       },
       "csaStream": {
@@ -10696,15 +9595,11 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "stream"
-            ]
+            "enum": ["stream"]
           },
           "stream": {
             "type": "boolean",
-            "enum": [
-              true
-            ]
+            "enum": [true]
           },
           "lastBubbleBlockId": {
             "type": "string"
@@ -10713,10 +9608,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "stream"
-        ],
+        "required": ["type", "stream"],
         "title": "Exec stream"
       },
       "csaCodeToExecute": {
@@ -10724,9 +9616,7 @@
         "properties": {
           "type": {
             "type": "string",
-            "enum": [
-              "codeToExecute"
-            ]
+            "enum": ["codeToExecute"]
           },
           "codeToExecute": {
             "type": "object",
@@ -10739,10 +9629,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "args",
-              "content"
-            ]
+            "required": ["args", "content"]
           },
           "lastBubbleBlockId": {
             "type": "string"
@@ -10751,10 +9638,7 @@
             "type": "boolean"
           }
         },
-        "required": [
-          "type",
-          "codeToExecute"
-        ],
+        "required": ["type", "codeToExecute"],
         "title": "Execute code"
       },
       "error.BAD_REQUEST": {
@@ -10779,18 +9663,13 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "message"
-              ]
+              "required": ["message"]
             },
             "description": "An array of issues that were responsible for the error",
             "example": []
           }
         },
-        "required": [
-          "message",
-          "code"
-        ],
+        "required": ["message", "code"],
         "title": "Error",
         "description": "The error information",
         "example": {
@@ -10821,18 +9700,13 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "message"
-              ]
+              "required": ["message"]
             },
             "description": "An array of issues that were responsible for the error",
             "example": []
           }
         },
-        "required": [
-          "message",
-          "code"
-        ],
+        "required": ["message", "code"],
         "title": "Error",
         "description": "The error information",
         "example": {
@@ -10863,18 +9737,13 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "message"
-              ]
+              "required": ["message"]
             },
             "description": "An array of issues that were responsible for the error",
             "example": []
           }
         },
-        "required": [
-          "message",
-          "code"
-        ],
+        "required": ["message", "code"],
         "title": "Error",
         "description": "The error information",
         "example": {
@@ -10905,18 +9774,13 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "message"
-              ]
+              "required": ["message"]
             },
             "description": "An array of issues that were responsible for the error",
             "example": []
           }
         },
-        "required": [
-          "message",
-          "code"
-        ],
+        "required": ["message", "code"],
         "title": "Error",
         "description": "The error information",
         "example": {
@@ -10947,18 +9811,13 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "message"
-              ]
+              "required": ["message"]
             },
             "description": "An array of issues that were responsible for the error",
             "example": []
           }
         },
-        "required": [
-          "message",
-          "code"
-        ],
+        "required": ["message", "code"],
         "title": "Error",
         "description": "The error information",
         "example": {
