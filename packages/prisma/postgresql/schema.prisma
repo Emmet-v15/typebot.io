@@ -285,7 +285,6 @@ model Answer {
 
   @@unique([resultId, blockId, groupId])
   @@index([blockId, itemId])
-  @@index([storageUsed])
 }
 
 model Coupon {
@@ -356,6 +355,7 @@ model BannedIp {
 enum WorkspaceRole {
   ADMIN
   MEMBER
+  ANALYTICS
   GUEST
 }
 
