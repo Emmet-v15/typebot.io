@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { HStack, Flex, Button, useDisclosure } from '@chakra-ui/react'
 import { HardDriveIcon, SettingsIcon } from '@/components/icons'
 import { useUser } from '@/features/account/hooks/useUser'
@@ -9,13 +9,26 @@ import { useTranslate } from '@tolgee/react'
 import { useWorkspace } from '@/features/workspace/WorkspaceProvider'
 import { WorkspaceDropdown } from '@/features/workspace/components/WorkspaceDropdown'
 import { WorkspaceSettingsModal } from '@/features/workspace/components/WorkspaceSettingsModal'
+import { WorkspaceRole } from '@typebot.io/prisma'
 
-export const DashboardHeader = () => {
+type Props = {
+  type: 'typebots' | 'analytics'
+}
+
+export const DashboardHeader = ({ type }: Props) => {
   const { t } = useTranslate()
   const { user, logOut } = useUser()
+
   const { workspace, switchWorkspace, createWorkspace } = useWorkspace()
 
   const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const { currentRole } = useWorkspace()
+  const [analyticsUser, setAnalyticsUser] = useState(true)
+  useEffect(() => {
+    if (!currentRole) return
+    setAnalyticsUser(currentRole === WorkspaceRole.ANALYTICS)
+  }, [currentRole, setAnalyticsUser])
 
   const handleCreateNewWorkspace = () =>
     createWorkspace(user?.name ?? undefined)
@@ -29,13 +42,39 @@ export const DashboardHeader = () => {
         maxW="1000px"
         flex="1"
       >
-        <Link href="/typebots" data-testid="typebot-logo">
+        <Link href={'/' + { type }} data-testid="typebot-logo">
           <EmojiOrImageIcon
             boxSize="30px"
             icon={workspace?.icon}
             defaultIcon={HardDriveIcon}
           />
         </Link>
+        {!analyticsUser && type === 'analytics' && (
+          <Link href="/typebots">
+            <Button
+              variant="outline"
+              colorScheme="primary"
+              fontSize="xl"
+              fontWeight="bold"
+              data-testid="typebot-name"
+            >
+              {t('dashboard.header.typebots')}
+            </Button>
+          </Link>
+        )}
+        {!analyticsUser && type === 'typebots' && (
+          <Link href="/analytics">
+            <Button
+              variant="outline"
+              colorScheme="primary"
+              fontSize="xl"
+              fontWeight="bold"
+              data-testid="typebot-name"
+            >
+              {t('dashboard.header.analytics')}
+            </Button>
+          </Link>
+        )}
         <HStack>
           {user && workspace && !workspace.isPastDue && (
             <WorkspaceSettingsModal
@@ -45,7 +84,7 @@ export const DashboardHeader = () => {
               workspace={workspace}
             />
           )}
-          {!workspace?.isPastDue && (
+          {type !== 'analytics' && (
             <Button
               leftIcon={<SettingsIcon />}
               onClick={onOpen}

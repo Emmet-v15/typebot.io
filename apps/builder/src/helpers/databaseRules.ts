@@ -27,6 +27,16 @@ export const canWriteTypebots = (
             },
           },
           {
+            workspace: {
+              members: {
+                some: {
+                  userId: user.id,
+                  role: { not: WorkspaceRole.ANALYTICS },
+                },
+              },
+            },
+          },
+          {
             collaborators: {
               some: { userId: user.id, type: { not: CollaborationType.READ } },
             },

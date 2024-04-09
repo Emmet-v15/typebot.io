@@ -55,6 +55,8 @@ export const WorkspaceProvider = ({
   const userId = user?.id
   const [workspaceId, setWorkspaceId] = useState<string | undefined>()
 
+  const router = useRouter()
+
   const { typebot } = useTypebot()
 
   const trpcContext = trpc.useContext()
@@ -111,6 +113,15 @@ export const WorkspaceProvider = ({
     (member) =>
       member.user.email === user?.email && member.workspaceId === workspaceId
   )?.role
+
+  useEffect(() => {
+    if (!currentRole) return
+    if (currentRole === WorkspaceRole.ANALYTICS) {
+      if (router.pathname.includes('/typebots')) {
+        router.push('/analytics')
+      }
+    }
+  }, [currentRole, router])
 
   useEffect(() => {
     if (

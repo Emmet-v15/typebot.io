@@ -32,31 +32,14 @@ export const SignInPage = ({ type }: Props) => {
           ? t('auth.signin.heading')
           : t('auth.register.heading')}
       </Heading>
-      {type === 'signin' ? (
-        <Text>
-          {t('auth.signin.noAccountLabel.preLink')}{' '}
-          <TextLink href="/register">
-            {t('auth.signin.noAccountLabel.link')}
-          </TextLink>
-        </Text>
-      ) : (
-        <Text>
-          {t('auth.register.alreadyHaveAccountLabel.preLink')}{' '}
-          <TextLink href="/signin">
-            {t('auth.register.alreadyHaveAccountLabel.link')}
-          </TextLink>
-        </Text>
-      )}
       <SignInForm defaultEmail={query.g?.toString()} />
       {type === 'signup' ? (
         <Text fontSize="sm" maxW="400px" textAlign="center">
           <T
             keyName="auth.register.aggreeToTerms"
             params={{
-              terms: <TextLink href={'https://typebot.io/terms-of-service'} />,
-              privacy: (
-                <TextLink href={'https://typebot.io/privacy-policies'} />
-              ),
+              terms: <TextLink href={'https://google.com/'} />,
+              privacy: <TextLink href={'https://google.com/'} />,
             }}
           />
         </Text>

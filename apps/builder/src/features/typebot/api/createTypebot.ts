@@ -61,6 +61,7 @@ export const createTypebot = authenticatedProcedure
     if (
       userRole === undefined ||
       userRole === WorkspaceRole.GUEST ||
+      userRole === WorkspaceRole.ANALYTICS ||
       !workspace
     )
       throw new TRPCError({ code: 'NOT_FOUND', message: 'Workspace not found' })

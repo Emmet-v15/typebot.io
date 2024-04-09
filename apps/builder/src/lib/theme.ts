@@ -14,6 +14,7 @@ import {
   popoverAnatomy,
   switchAnatomy,
 } from '@chakra-ui/anatomy'
+import { createTheme } from '@mui/material'
 
 const config: ThemeConfig = {
   initialColorMode: 'system',
@@ -236,10 +237,21 @@ const styles = {
   }),
 }
 
-export const customTheme = extendTheme({
+export const chakraTheme = extendTheme({
   colors,
   fonts,
   components,
   config,
   styles,
+})
+
+export const customTheme = createTheme({
+  palette: {
+    primary: {
+      main: '#3f51b5',
+    },
+    secondary: {
+      main: '#f50057',
+    },
+  },
 })

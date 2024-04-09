@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { AppProps } from 'next/app'
 import { SessionProvider } from 'next-auth/react'
 import { ChakraProvider, createStandaloneToast } from '@chakra-ui/react'
-import { customTheme } from '@/lib/theme'
+import { chakraTheme, customTheme } from '@/lib/theme'
 import { useRouterProgressBar } from '@/lib/routerProgressBar'
 import '@/assets/styles/routerProgressBar.css'
 import '@/assets/styles/plate.css'
@@ -22,8 +22,9 @@ import { isCloudProdInstance } from '@/helpers/isCloudProdInstance'
 import { TolgeeProvider, useTolgeeSSR } from '@tolgee/react'
 import { tolgee } from '@/lib/tolgee'
 import { Toaster } from '@/components/Toaster'
+import { ThemeProvider } from '@mui/material/styles'
 
-const { ToastContainer, toast } = createStandaloneToast(customTheme)
+const { ToastContainer, toast } = createStandaloneToast(chakraTheme)
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter()
@@ -45,6 +46,12 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, [router.pathname])
 
   useEffect(() => {
+    if (router.pathname === '/') {
+      router.push('/typebots')
+    }
+  })
+
+  useEffect(() => {
     const newPlan = router.query.stripe?.toString()
     if (newPlan === Plan.STARTER || newPlan === Plan.PRO)
       toast({
@@ -60,22 +67,23 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <TolgeeProvider tolgee={ssrTolgee}>
       <ToastContainer />
-      <ChakraProvider theme={customTheme}>
-        <Toaster />
-        <SessionProvider session={pageProps.session}>
-          <UserProvider>
-            <TypebotProvider typebotId={typebotId}>
-              <WorkspaceProvider typebotId={typebotId}>
-                <Component {...pageProps} />
-                {!router.pathname.endsWith('edit') && isCloudProdInstance() && (
-                  <SupportBubble />
-                )}
-                <NewVersionPopup />
-              </WorkspaceProvider>
-            </TypebotProvider>
-          </UserProvider>
-        </SessionProvider>
-      </ChakraProvider>
+      <ThemeProvider theme={customTheme}>
+        <ChakraProvider theme={chakraTheme}>
+          <Toaster />
+          <SessionProvider session={pageProps.session}>
+            <UserProvider>
+              <TypebotProvider typebotId={typebotId}>
+                <WorkspaceProvider typebotId={typebotId}>
+                  <Component {...pageProps} />
+                  {!router.pathname.endsWith('edit') &&
+                    isCloudProdInstance() && <SupportBubble />}
+                  <NewVersionPopup />
+                </WorkspaceProvider>
+              </TypebotProvider>
+            </UserProvider>
+          </SessionProvider>
+        </ChakraProvider>
+      </ThemeProvider>
     </TolgeeProvider>
   )
 }

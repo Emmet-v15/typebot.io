@@ -36,7 +36,7 @@ export const FolderPage = () => {
   return (
     <Stack minH="100vh">
       <Seo title={t('dashboard.title')} />
-      <DashboardHeader />
+      <DashboardHeader type="typebots" />
       <TypebotDndProvider>
         {!folder ? (
           <Flex flex="1">

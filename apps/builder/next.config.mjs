@@ -36,6 +36,7 @@ const nextConfig = {
     '@typebot.io/schemas',
     '@typebot.io/emails',
     '@typebot.io/env',
+    '@mui/x-charts',
   ],
   i18n: {
     defaultLocale: 'en',

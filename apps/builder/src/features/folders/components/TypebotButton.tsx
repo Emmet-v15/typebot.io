@@ -26,6 +26,8 @@ import { TypebotInDashboard } from '@/features/dashboard/types'
 import { isMobile } from '@/helpers/isMobile'
 import { trpc, trpcVanilla } from '@/lib/trpc'
 import { duplicateName } from '@/features/typebot/helpers/duplicateName'
+import { useWorkspace } from '@/features/workspace/WorkspaceProvider'
+import { WorkspaceRole } from '@typebot.io/prisma'
 
 type Props = {
   typebot: TypebotInDashboard
@@ -50,6 +52,7 @@ export const TypebotButton = ({
     onClose: onDeleteClose,
   } = useDisclosure()
 
+  const { currentRole } = useWorkspace()
   const { showToast } = useToast()
 
   const { mutate: importTypebot } = trpc.typebot.importTypebot.useMutation({
@@ -57,6 +60,10 @@ export const TypebotButton = ({
       showToast({ description: error.message })
     },
     onSuccess: ({ typebot }) => {
+      if (!currentRole || currentRole === WorkspaceRole.ANALYTICS) {
+        router.push(`/analytics/${typebot.id}/view`)
+        return
+      }
       router.push(`/typebots/${typebot.id}/edit`)
     },
   })
@@ -81,6 +88,10 @@ export const TypebotButton = ({
     })
 
   const handleTypebotClick = () => {
+    if (router.pathname.includes('/analytics')) {
+      router.push(`/analytics/${typebot.id}/view`)
+      return
+    }
     if (draggedTypebotDebounced) return
     router.push(
       isMobile

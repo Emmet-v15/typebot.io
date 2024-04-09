@@ -191,9 +191,22 @@ model Typebot {
   whatsAppCredentialsId   String?
   riskLevel               Int?
   bannedIps               BannedIp[]
+  stats                   TypebotStats[]
 
   @@index([workspaceId])
   @@index([isArchived, createdAt(sort: Desc)])
+}
+
+model TypebotStats {
+  id                  String   @id @default(cuid())
+  typebotId           String
+  completed           Boolean
+  userMessages        Int
+  callbackAsked       Boolean
+  averageResponseTime Float?
+  chatTime            Float?
+  createdAt           DateTime @default(now())
+  Typebot             Typebot? @relation(fields: [typebotId], references: [id])
 }
 
 model Invitation {

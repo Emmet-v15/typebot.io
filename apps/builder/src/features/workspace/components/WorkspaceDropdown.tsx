@@ -18,6 +18,8 @@ import {
   Text,
 } from '@chakra-ui/react'
 import { WorkspaceInApp } from '../WorkspaceProvider'
+import { useWorkspace } from '../WorkspaceProvider'
+import { WorkspaceRole } from '@typebot.io/prisma'
 
 type Props = {
   currentWorkspace?: WorkspaceInApp
@@ -34,8 +36,11 @@ export const WorkspaceDropdown = ({
 }: Props) => {
   const { t } = useTranslate()
   const { data } = trpc.workspace.listWorkspaces.useQuery()
+  const { currentRole } = useWorkspace()
 
   const workspaces = data?.workspaces ?? []
+
+  const isAnalyticsUser = currentRole === WorkspaceRole.ANALYTICS
 
   return (
     <Menu placement="bottom-end">
@@ -46,34 +51,37 @@ export const WorkspaceDropdown = ({
               <Text noOfLines={1} maxW="200px">
                 {currentWorkspace.name}
               </Text>
-              <PlanTag plan={currentWorkspace.plan} />
             </>
           )}
           <ChevronLeftIcon transform="rotate(-90deg)" />
         </HStack>
       </MenuButton>
       <MenuList>
-        {workspaces
-          ?.filter((workspace) => workspace.id !== currentWorkspace?.id)
-          .map((workspace) => (
-            <MenuItem
-              key={workspace.id}
-              onClick={() => onWorkspaceSelected(workspace.id)}
-            >
-              <HStack>
-                <EmojiOrImageIcon
-                  icon={workspace.icon}
-                  boxSize="16px"
-                  defaultIcon={HardDriveIcon}
-                />
-                <Text>{workspace.name}</Text>
-                <PlanTag plan={workspace.plan} />
-              </HStack>
-            </MenuItem>
-          ))}
-        <MenuItem onClick={onCreateNewWorkspaceClick} icon={<PlusIcon />}>
-          {t('workspace.dropdown.newButton.label')}
-        </MenuItem>
+        {!isAnalyticsUser &&
+          workspaces
+            ?.filter((workspace) => workspace.id !== currentWorkspace?.id)
+            .map((workspace) => (
+              <MenuItem
+                key={workspace.id}
+                onClick={() => onWorkspaceSelected(workspace.id)}
+              >
+                <HStack>
+                  <EmojiOrImageIcon
+                    icon={workspace.icon}
+                    boxSize="16px"
+                    defaultIcon={HardDriveIcon}
+                  />
+                  <Text>{workspace.name}</Text>
+                  <PlanTag plan={workspace.plan} />
+                </HStack>
+              </MenuItem>
+            ))}
+        {}
+        {!isAnalyticsUser && (
+          <MenuItem onClick={onCreateNewWorkspaceClick} icon={<PlusIcon />}>
+            {t('workspace.dropdown.newButton.label')}
+          </MenuItem>
+        )}
         <MenuItem
           onClick={onLogoutClick}
           icon={<LogOutIcon />}

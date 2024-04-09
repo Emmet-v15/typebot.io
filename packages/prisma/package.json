@@ -11,8 +11,7 @@
     "db:push": "dotenv -e ./.env -e ../../.env -- tsx scripts/db-push.ts",
     "migrate:deploy": "dotenv -e ./.env -e ../../.env -- tsx scripts/migrate-deploy.ts",
     "migrate:dev": "dotenv -e ./.env -e ../../.env -- prisma migrate dev --create-only --schema postgresql/schema.prisma",
-    "db:migrate": "pnpm migrate:deploy",
-    "db:resolve": "dotenv -e ./.env -e ../../.env -- tsx scripts/migrate-resolve.ts"
+    "db:migrate": "pnpm migrate:deploy"
   },
   "dependencies": {
     "@prisma/client": "5.8.0"
@@ -24,5 +23,8 @@
     "@typebot.io/tsconfig": "workspace:*",
     "tsx": "3.12.7",
     "typescript": "5.3.2"
+  },
+  "prisma": {
+    "schema": "postgresql/schema.prisma"
   }
 }

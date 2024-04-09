@@ -17,7 +17,10 @@ export const deleteCredentials = authenticatedProcedure
         where: {
           id: workspaceId,
           members: {
-            some: { userId: user.id, role: { in: ['ADMIN', 'MEMBER'] } },
+            some: {
+              userId: user.id,
+              role: { in: ['ADMIN', 'MEMBER', 'ANALYTICS'] },
+            },
           },
         },
         select: { id: true, members: true },

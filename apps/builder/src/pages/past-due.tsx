@@ -17,7 +17,7 @@ export default function Page() {
 
   return (
     <>
-      <DashboardHeader />
+      <DashboardHeader type="typebots" />
       <VStack
         w="full"
         h="calc(100vh - 64px)"

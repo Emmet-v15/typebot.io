@@ -41,6 +41,7 @@ export const MemberItem = ({
   const { t } = useTranslate()
   const handleAdminClick = () => onSelectNewRole(WorkspaceRole.ADMIN)
   const handleMemberClick = () => onSelectNewRole(WorkspaceRole.MEMBER)
+  const handleAnalyticsClick = () => onSelectNewRole(WorkspaceRole.ANALYTICS)
 
   return (
     <Menu placement="bottom-end" isLazy>
@@ -65,6 +66,9 @@ export const MemberItem = ({
           </MenuItem>
           <MenuItem onClick={handleMemberClick}>
             {convertWorkspaceRoleToReadable(WorkspaceRole.MEMBER)}
+          </MenuItem>
+          <MenuItem onClick={handleAnalyticsClick}>
+            {convertWorkspaceRoleToReadable(WorkspaceRole.ANALYTICS)}
           </MenuItem>
           <MenuItem color="red.500" onClick={onDeleteClick}>
             {t('remove')}

@@ -105,6 +105,9 @@ const WorkspaceRoleMenuButton = ({
           <MenuItem onClick={() => onChange(WorkspaceRole.MEMBER)}>
             {convertWorkspaceRoleToReadable(WorkspaceRole.MEMBER)}
           </MenuItem>
+          <MenuItem onClick={() => onChange(WorkspaceRole.ANALYTICS)}>
+            {convertWorkspaceRoleToReadable(WorkspaceRole.ANALYTICS)}
+          </MenuItem>
         </Stack>
       </MenuList>
     </Menu>
@@ -117,6 +120,8 @@ export const convertWorkspaceRoleToReadable = (role: WorkspaceRole): string => {
       return 'Admin'
     case WorkspaceRole.MEMBER:
       return 'Member'
+    case WorkspaceRole.ANALYTICS:
+      return 'Analytics'
     case WorkspaceRole.GUEST:
       return 'Guest'
   }

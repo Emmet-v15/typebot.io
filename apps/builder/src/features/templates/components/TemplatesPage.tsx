@@ -6,7 +6,7 @@ import { CreateNewTypebotButtons } from './CreateNewTypebotButtons'
 export const TemplatesPage = () => (
   <VStack h="100vh">
     <Seo title="Templates" />
-    <DashboardHeader />
+    <DashboardHeader type="typebots" />
     <CreateNewTypebotButtons />
   </VStack>
 )

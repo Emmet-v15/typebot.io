@@ -22,6 +22,7 @@ import { TypebotCardOverlay } from './TypebotButtonOverlay'
 import { useTypebots } from '@/features/dashboard/hooks/useTypebots'
 import { TypebotInDashboard } from '@/features/dashboard/types'
 import { trpc } from '@/lib/trpc'
+import { useRouter } from 'next/router'
 
 type Props = { folder: DashboardFolder | null }
 
@@ -46,6 +47,7 @@ export const FolderContent = ({ folder }: Props) => {
     useState<TypebotInDashboard>()
 
   const { showToast } = useToast()
+  const router = useRouter()
 
   const {
     data: { folders } = {},
@@ -164,23 +166,31 @@ export const FolderContent = ({ folder }: Props) => {
         <Stack>
           <HStack>
             {folder && <BackButton id={folder.parentFolderId} />}
-            {currentRole !== WorkspaceRole.GUEST && (
-              <CreateFolderButton
-                onClick={handleCreateFolder}
-                isLoading={isCreatingFolder || isFolderLoading}
-              />
-            )}
+            {currentRole !== WorkspaceRole.GUEST &&
+              currentRole !== WorkspaceRole.ANALYTICS &&
+              !router.pathname.includes('/analytics') && (
+                <CreateFolderButton
+                  onClick={handleCreateFolder}
+                  isLoading={isCreatingFolder || isFolderLoading}
+                />
+              )}
           </HStack>
           <Wrap spacing={4}>
-            {currentRole !== WorkspaceRole.GUEST && (
-              <CreateBotButton
-                folderId={folder?.id}
-                isLoading={isTypebotLoading}
-                isFirstBot={typebots?.length === 0 && folder === null}
-              />
-            )}
+            {currentRole !== WorkspaceRole.GUEST &&
+              currentRole !== WorkspaceRole.ANALYTICS &&
+              !router.pathname.includes('/analytics') && (
+                <CreateBotButton
+                  folderId={folder?.id}
+                  isLoading={isTypebotLoading}
+                  isFirstBot={typebots?.length === 0 && folder === null}
+                />
+              )}
             {isFolderLoading && <ButtonSkeleton />}
-            {folders &&
+
+            {currentRole !== WorkspaceRole.GUEST &&
+              currentRole !== WorkspaceRole.ANALYTICS &&
+              !router.pathname.includes('/analytics') &&
+              folders &&
               folders.map((folder, index) => (
                 <FolderButton
                   key={folder.id.toString()}
@@ -198,6 +208,7 @@ export const FolderContent = ({ folder }: Props) => {
                   typebot={typebot}
                   onTypebotUpdated={refetchTypebots}
                   onMouseDown={handleMouseDown(typebot)}
+                  isReadOnly={currentRole === WorkspaceRole.ANALYTICS}
                 />
               ))}
           </Wrap>

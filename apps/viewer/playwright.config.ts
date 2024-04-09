@@ -20,7 +20,7 @@ export default defineConfig({
         command: 'pnpm run start',
         timeout: 60_000,
         reuseExistingServer: true,
-        port: 3001,
+        port: 3002,
       }
     : undefined,
   outputDir: './src/test/results',

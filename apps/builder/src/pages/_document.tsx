@@ -1,4 +1,4 @@
-import { customTheme } from '@/lib/theme'
+import { chakraTheme } from '@/lib/theme'
 import { ColorModeScript } from '@chakra-ui/react'
 import { Html, Head, Main, NextScript } from 'next/document'
 
@@ -15,7 +15,7 @@ const Document = () => (
       <script src="/__ENV.js" />
     </Head>
     <body>
-      <ColorModeScript initialColorMode={customTheme.config.initialColorMode} />
+      <ColorModeScript initialColorMode={chakraTheme.config.initialColorMode} />
       <Main />
       <NextScript />
     </body>
