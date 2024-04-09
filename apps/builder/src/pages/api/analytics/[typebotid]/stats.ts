@@ -79,7 +79,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     records.forEach((record) => {
       let _timePeriod
       if (timePeriod === 'hour') {
-        _timePeriod = record.createdAt.getHours()
+        _timePeriod = record.createdAt.getHours() + 1
       } else if (timePeriod === 'day') {
         _timePeriod = record.createdAt.getDate()
       } else if (timePeriod === 'week') {
@@ -111,6 +111,46 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     })
 
     return res.status(200).send({ dataPoints: stats || [] })
+  } else if (req.method === 'POST') {
+    const auth = req.headers.authorization
+    if (!auth) return res.status(401).send({ message: 'Unauthorized' })
+    if (!auth.startsWith('Bearer '))
+      return res.status(401).send({ message: 'Unauthorized' })
+    const token = auth.split('Bearer ')[1]
+    if (token !== process.env.ANALYTICS_API_KEY)
+      return res.status(401).send({ message: 'Unauthorized' })
+
+    const typebotId = req.query.typebotId as string
+
+    // model TypebotStats {
+    //   id                  String   @id @default(cuid())
+    //   typebotId           String
+    //   completed           Boolean
+    //   userMessages        Int
+    //   callbackAsked       Boolean
+    //   averageResponseTime Float?
+    //   chatTime            Float?
+    //   createdAt           DateTime @default(now())
+    //   Typebot             Typebot? @relation(fields: [typebotId], references: [id])
+    // }
+
+    const body = req.body
+    const record = {
+      typebotId,
+      completed: body.completed,
+      userMessages: body.userMessages,
+      callbackAsked: body.callbackAsked,
+      averageResponseTime: body.averageResponseTime,
+      chatTime: body.chatTime,
+    }
+    if (!record.completed || !record.userMessages || !record.callbackAsked)
+      return res.status(400).send({ message: 'Invalid request body' })
+
+    await prisma.typebotStats.create({
+      data: record,
+    })
+
+    return res.status(201).send({ message: 'Record created' })
   }
   return methodNotAllowed(res)
 }

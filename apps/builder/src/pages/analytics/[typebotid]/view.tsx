@@ -105,11 +105,12 @@ export default function Page() {
   const [LineGraphData, setLineGraphData] = useState<GraphData | null>(null)
   const [BarGraphData, setBarGraphData] = useState<GraphData | null>(null)
 
+  const [timePeriod, setTimePeriod] = useState('hour')
+
   useEffect(() => {
     const fetchAndSetData = async () => {
       if (typeof typebotid === 'string') {
         try {
-          let timePeriod = 'hour'
           const data: RawDataPoints = await fetchData(
             typebotid,
             '1-1-2023',
@@ -117,23 +118,30 @@ export default function Page() {
             'all',
             timePeriod
           )
+          let _timePeriod
           if (timePeriod === 'hour') {
-            timePeriod = 'Day'
+            _timePeriod = 'Day'
           } else if (timePeriod === 'day') {
-            timePeriod = 'Week'
+            _timePeriod = 'Week'
           } else if (timePeriod === 'week') {
-            timePeriod = 'Month'
+            _timePeriod = 'Month'
           } else if (timePeriod === 'month') {
-            timePeriod = 'Year'
+            _timePeriod = 'Year'
           } else {
-            timePeriod = 'Hour'
+            _timePeriod = 'Hour'
           }
-
-          const rawBarGraphData: RawDataPoints = {
-            ...Object.fromEntries(
-              Object.entries(data).filter(([,], index) => index % 2 === 0)
-            ),
-          }
+          // if timeperiod is not week or year, remove every other data point
+          const rawBarGraphData = Object.entries(data).reduce(
+            (acc, [key, value]) => {
+              if (timePeriod === 'week' || timePeriod === 'year') {
+                acc[parseInt(key)] = value
+              } else if (parseInt(key) % 2 === 0) {
+                acc[parseInt(key)] = value
+              }
+              return acc
+            },
+            {} as RawDataPoints
+          )
 
           const formattedLatencyGraphData: GraphData = {
             categories: Object.keys(data).map((key) => `${key}`),
@@ -146,7 +154,7 @@ export default function Page() {
               },
             ],
             graphTitle: 'Bot Latency',
-            timePeriod: timePeriod as 'day' | 'week' | 'month' | 'year',
+            timePeriod: _timePeriod as 'day' | 'week' | 'month' | 'year',
           }
 
           const formattedLineGraphData: GraphData = {
@@ -163,7 +171,7 @@ export default function Page() {
               },
             ],
             graphTitle: 'User Activity',
-            timePeriod: timePeriod as 'day' | 'week' | 'month' | 'year',
+            timePeriod: _timePeriod as 'day' | 'week' | 'month' | 'year',
           }
 
           const formattedBarGraphData: GraphData = {
@@ -183,7 +191,7 @@ export default function Page() {
               },
             ],
             graphTitle: 'Callbacks Asked vs Chats completed per Day',
-            timePeriod: timePeriod as 'day' | 'week' | 'month' | 'year',
+            timePeriod: _timePeriod as 'day' | 'week' | 'month' | 'year',
           }
 
           setLatencyGraphData(formattedLatencyGraphData)
@@ -196,7 +204,7 @@ export default function Page() {
     }
 
     fetchAndSetData()
-  }, [typebotid])
+  }, [typebotid, timePeriod])
 
   return (
     <Flex overflow="clip" h="100vh" flexDir="column" id="editor-container">
@@ -240,12 +248,13 @@ export default function Page() {
                   View Timeperiod
                 </Text>
                 <ButtonGroup isAttached variant="outline">
-                  <Button>Hour</Button>
-                  <Button>Day</Button>
-                  <Button>Week</Button>
-                  <Button>Month</Button>
-                  <Button>Year</Button>
-                  <Button>All</Button>
+                  <Button onClick={() => setTimePeriod('hour')}>Hourly</Button>
+                  <Button onClick={() => setTimePeriod('day')}>Daily</Button>
+                  <Button onClick={() => setTimePeriod('week')}>Weekly</Button>
+                  <Button onClick={() => setTimePeriod('month')}>
+                    Monthly
+                  </Button>
+                  <Button onClick={() => setTimePeriod('year')}>Yearly</Button>
                 </ButtonGroup>
               </Box>
               <Box
