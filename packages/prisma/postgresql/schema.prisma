@@ -191,22 +191,43 @@ model Typebot {
   whatsAppCredentialsId   String?
   riskLevel               Int?
   bannedIps               BannedIp[]
-  stats                   TypebotStats[]
+  conversations           Conversation[]
 
   @@index([workspaceId])
   @@index([isArchived, createdAt(sort: Desc)])
 }
 
-model TypebotStats {
-  id                  String   @id @default(cuid())
-  typebotId           String
-  completed           Boolean
-  userMessages        Int
-  callbackAsked       Boolean
-  averageResponseTime Float?
-  chatTime            Float?
-  createdAt           DateTime @default(now())
-  Typebot             Typebot? @relation(fields: [typebotId], references: [id])
+model Conversation {
+  id                 String       @id @default(cuid())
+  createdAt          DateTime     @default(now())
+  typebot            Typebot      @relation(fields: [typebotId], references: [id], onDelete: Cascade)
+  typebotId          String
+  callback           Callback?
+  transcripts        Transcript[]
+  threadId           String?
+  conversationUserId String
+}
+
+model Callback {
+  id             String       @id @default(cuid())
+  createdAt      DateTime     @default(now())
+  demoURL        String?
+  email          String?
+  phone          String?
+  ip             String?
+  country        String?
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
+  conversationId String       @unique
+}
+
+model Transcript {
+  id             String        @id @default(cuid())
+  createdAt      DateTime      @default(now())
+  finishedAt     DateTime      @default(now()) @updatedAt
+  userMessage    String?
+  botMessage     String?
+  conversation   Conversation? @relation(fields: [conversationId], references: [id])
+  conversationId String?
 }
 
 model Invitation {
