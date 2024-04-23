@@ -34,13 +34,11 @@ export default function Page() {
   const [isLoading, setIsLoading] = useState(true)
   const [transcripts, setTranscripts] = useState<Transcript[]>([]) // Update initial state value
 
-  console.log(typebotId, conversationId)
-
   useEffect(() => {
     const fetchAndSetData = async () => {
       if (!typebotId || !conversationId) return
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_AUTH_URL}//api/analytics/${typebotId}/transcript?conversationId=${conversationId}`,
+        `${process.env.NEXT_PUBLIC_AUTH_URL}/api/analytics/${typebotId}/transcript?conversationId=${conversationId}`,
         {
           headers: {
             contentType: 'application/json',
@@ -50,7 +48,6 @@ export default function Page() {
       )
 
       const data = await response.json()
-      console.log(data)
       setTranscripts([data])
       setIsLoading(false)
     }

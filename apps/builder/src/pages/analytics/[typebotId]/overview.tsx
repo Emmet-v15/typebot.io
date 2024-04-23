@@ -64,7 +64,7 @@ export default function Page() {
 
       if (typeof typebotId === 'string') {
         const res = await fetch(
-          `${process.env.NEXT_PUBLIC_AUTH_URL}//api/analytics/${typebotId}/conversation?begin=${begin}&end=${end}&timePeriod=${timePeriod}`,
+          `${process.env.NEXT_PUBLIC_AUTH_URL}/api/analytics/${typebotId}/conversation?begin=${begin}&end=${end}&timePeriod=${timePeriod}`,
           {
             headers: {
               contentType: 'application/json',

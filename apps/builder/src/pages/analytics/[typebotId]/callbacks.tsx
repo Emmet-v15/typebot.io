@@ -54,7 +54,6 @@ export default function Page() {
         )
 
         const data: Callback[] = await response.json()
-        console.log(data)
         setData(data)
         setLoading(false)
       }
