@@ -55,7 +55,7 @@ export default function Page() {
     if (!typebotId) return
     const fetchAndSetData = async () => {
       const res = await fetch(
-        `/api/analytics/${typebotId}/transcript?limit=100&offset=0`,
+        `${process.env.NEXT_PUBLIC_AUTH_URL}//api/analytics/${typebotId}/transcript?limit=100&offset=0`,
         {
           headers: {
             contentType: 'application/json',

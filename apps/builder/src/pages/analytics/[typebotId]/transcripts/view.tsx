@@ -40,7 +40,7 @@ export default function Page() {
     const fetchAndSetData = async () => {
       if (!typebotId || !conversationId) return
       const response = await fetch(
-        `/api/analytics/${typebotId}/transcript?conversationId=${conversationId}`,
+        `${process.env.NEXT_PUBLIC_AUTH_URL}//api/analytics/${typebotId}/transcript?conversationId=${conversationId}`,
         {
           headers: {
             contentType: 'application/json',
