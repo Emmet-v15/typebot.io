@@ -61,7 +61,7 @@ export const TypebotButton = ({
     },
     onSuccess: ({ typebot }) => {
       if (!currentRole || currentRole === WorkspaceRole.ANALYTICS) {
-        router.push(`/analytics/${typebot.id}/view`)
+        router.push(`/analytics/${typebot.id}/analytics`)
         return
       }
       router.push(`/typebots/${typebot.id}/edit`)
@@ -89,7 +89,7 @@ export const TypebotButton = ({
 
   const handleTypebotClick = () => {
     if (router.pathname.includes('/analytics')) {
-      router.push(`/analytics/${typebot.id}/view`)
+      router.push(`/analytics/${typebot.id}/overview`)
       return
     }
     if (draggedTypebotDebounced) return

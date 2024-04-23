@@ -10,7 +10,7 @@ interface Series {
 interface GraphData {
   categories: string[]
   series: Series[]
-  timePeriod: 'day' | 'week' | 'month' | 'year'
+  timePeriod: 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly'
   graphTitle?: string
 }
 
@@ -74,7 +74,7 @@ const LineGraph: React.FC<{ graphData: GraphData }> = ({ graphData }) => {
       },
     },
     subtitle: {
-      text: `In the last ${timePeriod}` as const,
+      text: `${timePeriod}` as const,
       align: 'left' as const,
       style: {
         color: colors.blue[500],
@@ -144,7 +144,7 @@ const BarChart: React.FC<{ graphData: GraphData }> = ({ graphData }) => {
       },
     },
     subtitle: {
-      text: `In the last ${timePeriod}` as const,
+      text: `${timePeriod}` as const,
       align: 'left' as const,
       style: {
         color: colors.blue[500],

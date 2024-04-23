@@ -38,73 +38,73 @@ model Session {
 
 model User {
   id                          String                    @id @default(cuid())
-  createdAt                   DateTime                  @default(now())
-  updatedAt                   DateTime                  @default(now()) @updatedAt
-  lastActivityAt              DateTime                  @default(now())
   name                        String?
   email                       String?                   @unique
   emailVerified               DateTime?
   image                       String?
+  createdAt                   DateTime                  @default(now())
+  lastActivityAt              DateTime                  @default(now())
+  updatedAt                   DateTime                  @default(now()) @updatedAt
   company                     String?
   onboardingCategories        Json
-  referral                    String?
   graphNavigation             GraphNavigation?
   preferredAppAppearance      String?
+  displayedInAppNotifications Json?
+  referral                    String?
   accounts                    Account[]
   apiTokens                   ApiToken[]
+  bannedIps                   BannedIp[]
   CollaboratorsOnTypebots     CollaboratorsOnTypebots[]
   workspaces                  MemberInWorkspace[]
   sessions                    Session[]
-  bannedIps                   BannedIp[]
-  displayedInAppNotifications Json?
 }
 
 model ApiToken {
   id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
   token     String   @unique
   name      String
   ownerId   String
+  createdAt DateTime @default(now())
   owner     User     @relation(fields: [ownerId], references: [id], onDelete: Cascade)
 }
 
 model Workspace {
   id                            String                @id @default(cuid())
-  createdAt                     DateTime              @default(now())
-  updatedAt                     DateTime              @default(now()) @updatedAt
   name                          String
   icon                          String?
+  createdAt                     DateTime              @default(now())
   plan                          Plan                  @default(FREE)
   stripeId                      String?               @unique
-  credentials                   Credentials[]
-  customDomains                 CustomDomain[]
-  folders                       DashboardFolder[]
-  members                       MemberInWorkspace[]
-  typebots                      Typebot[]
-  invitations                   WorkspaceInvitation[]
   additionalChatsIndex          Int                   @default(0)
   additionalStorageIndex        Int                   @default(0)
   chatsLimitFirstEmailSentAt    DateTime?
-  storageLimitFirstEmailSentAt  DateTime?
   chatsLimitSecondEmailSentAt   DateTime?
+  storageLimitFirstEmailSentAt  DateTime?
   storageLimitSecondEmailSentAt DateTime?
-  claimableCustomPlan           ClaimableCustomPlan?
   customChatsLimit              Int?
-  customStorageLimit            Int?
   customSeatsLimit              Int?
+  customStorageLimit            Int?
+  updatedAt                     DateTime              @default(now()) @updatedAt
   isQuarantined                 Boolean               @default(false)
   isSuspended                   Boolean               @default(false)
   isPastDue                     Boolean               @default(false)
   isVerified                    Boolean?
+  claimableCustomPlan           ClaimableCustomPlan?
+  credentials                   Credentials[]
+  customDomains                 CustomDomain[]
+  folders                       DashboardFolder[]
+  members                       MemberInWorkspace[]
   themeTemplates                ThemeTemplate[]
+  typebots                      Typebot[]
+  invitations                   WorkspaceInvitation[]
 }
 
 model MemberInWorkspace {
-  createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @default(now()) @updatedAt
   userId      String
   workspaceId String
   role        WorkspaceRole
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @default(now()) @updatedAt
   user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   workspace   Workspace     @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
 
@@ -114,10 +114,10 @@ model MemberInWorkspace {
 model WorkspaceInvitation {
   id          String        @id @default(cuid())
   createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @default(now()) @updatedAt
   email       String
   workspaceId String
   type        WorkspaceRole
+  updatedAt   DateTime      @default(now()) @updatedAt
   workspace   Workspace     @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
 }
 
@@ -130,12 +130,12 @@ model CustomDomain {
 
 model Credentials {
   id          String    @id @default(cuid())
-  createdAt   DateTime  @default(now())
-  workspaceId String
   data        String
   name        String
   type        String
   iv          String
+  createdAt   DateTime  @default(now())
+  workspaceId String
   workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
 }
 
@@ -150,62 +150,61 @@ model VerificationToken {
 model DashboardFolder {
   id             String            @id @default(cuid())
   createdAt      DateTime          @default(now())
-  updatedAt      DateTime          @default(now()) @updatedAt
   name           String
   parentFolderId String?
+  updatedAt      DateTime          @default(now()) @updatedAt
   workspaceId    String
   parentFolder   DashboardFolder?  @relation("ParentChild", fields: [parentFolderId], references: [id])
-  workspace      Workspace         @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   childrenFolder DashboardFolder[] @relation("ParentChild")
+  workspace      Workspace         @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   typebots       Typebot[]
 }
 
 model Typebot {
   id                      String                    @id @default(cuid())
-  version                 String?
   createdAt               DateTime                  @default(now())
   updatedAt               DateTime                  @default(now()) @updatedAt
-  icon                    String?
   name                    String
   folderId                String?
   groups                  Json
-  events                  Json?
   variables               Json
   edges                   Json
   theme                   Json
-  selectedThemeTemplateId String?
   settings                Json
   publicId                String?                   @unique
   customDomain            String?                   @unique
+  icon                    String?
   workspaceId             String
   resultsTablePreferences Json?
-  folder                  DashboardFolder?          @relation(fields: [folderId], references: [id])
-  workspace               Workspace                 @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  isArchived              Boolean                   @default(false)
+  isClosed                Boolean                   @default(false)
+  version                 String?
+  selectedThemeTemplateId String?
+  whatsAppCredentialsId   String?
+  events                  Json?
+  riskLevel               Int?
+  bannedIps               BannedIp[]
   collaborators           CollaboratorsOnTypebots[]
+  conversations           Conversation[]
   invitations             Invitation[]
   publishedTypebot        PublicTypebot?
   results                 Result[]
+  folder                  DashboardFolder?          @relation(fields: [folderId], references: [id])
+  workspace               Workspace                 @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   webhooks                Webhook[]
-  isArchived              Boolean                   @default(false)
-  isClosed                Boolean                   @default(false)
-  whatsAppCredentialsId   String?
-  riskLevel               Int?
-  bannedIps               BannedIp[]
-  conversations           Conversation[]
 
   @@index([workspaceId])
   @@index([isArchived, createdAt(sort: Desc)])
 }
 
 model Conversation {
-  id                 String       @id @default(cuid())
-  createdAt          DateTime     @default(now())
-  typebot            Typebot      @relation(fields: [typebotId], references: [id], onDelete: Cascade)
-  typebotId          String
-  callback           Callback?
-  transcripts        Transcript[]
-  threadId           String?
-  conversationUserId String
+  id          String       @id @default(cuid())
+  createdAt   DateTime     @default(now())
+  typebotId   String
+  threadId    String?
+  callback    Callback?
+  typebot     Typebot      @relation(fields: [typebotId], references: [id], onDelete: Cascade)
+  transcripts Transcript[]
 }
 
 model Callback {
@@ -216,8 +215,8 @@ model Callback {
   phone          String?
   ip             String?
   country        String?
-  conversation   Conversation @relation(fields: [conversationId], references: [id])
   conversationId String       @unique
+  conversation   Conversation @relation(fields: [conversationId], references: [id])
 }
 
 model Transcript {
@@ -226,27 +225,27 @@ model Transcript {
   finishedAt     DateTime      @default(now()) @updatedAt
   userMessage    String?
   botMessage     String?
-  conversation   Conversation? @relation(fields: [conversationId], references: [id])
   conversationId String?
+  conversation   Conversation? @relation(fields: [conversationId], references: [id])
 }
 
 model Invitation {
-  createdAt DateTime          @default(now())
-  updatedAt DateTime          @default(now()) @updatedAt
   email     String
   typebotId String
   type      CollaborationType
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @default(now()) @updatedAt
   typebot   Typebot           @relation(fields: [typebotId], references: [id], onDelete: Cascade)
 
   @@unique([email, typebotId])
 }
 
 model CollaboratorsOnTypebots {
-  createdAt DateTime          @default(now())
-  updatedAt DateTime          @default(now()) @updatedAt
   userId    String
   typebotId String
   type      CollaborationType
+  createdAt DateTime          @default(now())
+  updatedAt DateTime          @default(now()) @updatedAt
   typebot   Typebot           @relation(fields: [typebotId], references: [id], onDelete: Cascade)
   user      User              @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -255,16 +254,16 @@ model CollaboratorsOnTypebots {
 
 model PublicTypebot {
   id        String   @id @default(cuid())
-  version   String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @default(now()) @updatedAt
   typebotId String   @unique
   groups    Json
-  events    Json?
   variables Json
   edges     Json
   theme     Json
   settings  Json
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  version   String?
+  events    Json?
   typebot   Typebot  @relation(fields: [typebotId], references: [id], onDelete: Cascade)
 }
 
@@ -272,13 +271,13 @@ model Result {
   id          String        @id @default(cuid())
   createdAt   DateTime      @default(now())
   typebotId   String
-  variables   Json
   isCompleted Boolean
+  variables   Json
   hasStarted  Boolean?
   isArchived  Boolean?      @default(false)
-  typebot     Typebot       @relation(fields: [typebotId], references: [id], onDelete: Cascade)
   answers     Answer[]
   logs        Log[]
+  typebot     Typebot       @relation(fields: [typebotId], references: [id], onDelete: Cascade)
   edges       VisitedEdge[]
 
   @@index([typebotId, hasStarted, createdAt(sort: Desc)])
@@ -286,10 +285,10 @@ model Result {
 }
 
 model VisitedEdge {
-  result   Result @relation(fields: [resultId], references: [id], onDelete: Cascade)
   resultId String
   edgeId   String
   index    Int
+  result   Result @relation(fields: [resultId], references: [id], onDelete: Cascade)
 
   @@unique([resultId, index])
 }
@@ -309,12 +308,12 @@ model Log {
 model Answer {
   createdAt   DateTime @default(now()) @updatedAt
   resultId    String
-  blockId     String
-  itemId      String?
   groupId     String
-  variableId  String?
+  blockId     String
   content     String
+  variableId  String?
   storageUsed Int?
+  itemId      String?
   result      Result   @relation(fields: [resultId], references: [id], onDelete: Cascade)
 
   @@unique([resultId, blockId, groupId])
@@ -329,14 +328,14 @@ model Coupon {
 
 model Webhook {
   id          String   @id @default(cuid())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @default(now()) @updatedAt
   url         String?
   method      String
   queryParams Json
   headers     Json
   body        String?
   typebotId   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @default(now()) @updatedAt
   typebot     Typebot  @relation(fields: [typebotId], references: [id], onDelete: Cascade)
 }
 
@@ -349,14 +348,14 @@ model ClaimableCustomPlan {
   price        Int
   currency     String
   workspaceId  String    @unique
-  workspace    Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   chatsLimit   Int
   storageLimit Int
   seatsLimit   Int
-  isYearly     Boolean   @default(false)
   companyName  String?
+  isYearly     Boolean   @default(false)
   vatType      String?
   vatValue     String?
+  workspace    Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
 }
 
 model ChatSession {
@@ -372,25 +371,25 @@ model ThemeTemplate {
   updatedAt   DateTime  @default(now()) @updatedAt
   name        String
   theme       Json
-  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   workspaceId String
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
 }
 
 model BannedIp {
   id                   String   @id @default(cuid())
   createdAt            DateTime @default(now())
   ip                   String   @unique
-  responsibleTypebot   Typebot  @relation(fields: [responsibleTypebotId], references: [id], onDelete: Restrict)
   responsibleTypebotId String
-  user                 User     @relation(fields: [userId], references: [id], onDelete: Restrict)
   userId               String
+  responsibleTypebot   Typebot  @relation(fields: [responsibleTypebotId], references: [id])
+  user                 User     @relation(fields: [userId], references: [id])
 }
 
 enum WorkspaceRole {
   ADMIN
   MEMBER
-  ANALYTICS
   GUEST
+  ANALYTICS
 }
 
 enum GraphNavigation {
